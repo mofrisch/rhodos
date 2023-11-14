@@ -1,0 +1,45 @@
+---
+import Socials from "./Socials.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class="w-full bg-gradient-to-r from-blue-600 to-blue-100 text-sm text-blue-800"
+>
+  <div
+    class="grid w-full max-w-6xl grid-rows-1 items-center gap-4 px-4 py-8 lg:grid-cols-3 lg:content-end"
+  >
+    <!-- Adresse -->
+    <div
+      class="flex flex-col items-center lg:order-1 lg:items-start lg:text-blue-200"
+    >
+      <p>Restaurant Rhodos</p>
+      <p>Mainzer Straße 2, 64331 Weiterstadt</p>
+      <p>Telefon: 06150-4120</p>
+      <a href="mailto:info@restaurant-rhodos.net" class="hover:underline"
+        >E-Mail: info@restaurant-rhodos.net</a
+      >
+    </div>
+
+    <!-- Öffnungszeiten -->
+    <div class="flex flex-col items-center lg:order-3">
+      <p>Öffnungszeiten:</p>
+      <p>Dienstag - Freitag & Sonntag:</p><p>12:00 - 14:30 und 17:00 - 23:00</p>
+      <p>Samstag: 17:00 - 23:00</p>
+      <p>Montag: Ruhetag</p>
+    </div>
+
+    <!-- Socials -->
+    <div class="flex flex-col items-center lg:order-2">
+      <div class="items-center">
+        <span class=""
+          >&copy; {currentYear} Moritz Frisch. Alle Rechte vorbehalten.</span
+        >
+      </div>
+      <div>
+        <Socials />
+      </div>
+    </div>
+  </div>
+</footer>
