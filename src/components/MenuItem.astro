@@ -1,20 +1,17 @@
 ---
-import { isExternalModuleNameRelative } from "typescript";
 export interface Props {
-  item:
-    | {
-        title: string;
-        url: string;
-        activeNav: boolean;
-      }
-    | undefined;
+  item: {
+    title: string;
+    url: string;
+  };
 }
 
 const { item } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname;
 ---
 
 <li>
-  <a href={item?.url} class={item?.activeNav ? "active" : ""}>
-    {item?.title}
+  <a href={item.url} class={pathname == item.url ? "underline" : ""}>
+    {item.title}
   </a>
 </li>

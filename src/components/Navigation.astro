@@ -1,39 +1,33 @@
 ---
-// const { activeNav } = Astro.props;
-import { isTemplateExpression } from "typescript";
 import MenuItem from "./MenuItem.astro";
 const menuItems = [
   {
     title: "Home",
     url: "/",
-    activeNav: true,
   },
   {
     title: "Mittagskarte",
     url: "/lunch",
-    activeNav: false,
   },
   {
     title: "Speisen",
     url: "/menu",
-    activeNav: false,
   },
   {
     title: "Getränke",
     url: "/drinks",
-    activeNav: false,
   },
   {
     title: "Kontakt",
     url: "/contact",
-    activeNav: false,
   },
   {
     title: "Über uns",
     url: "/about",
-    activeNav: false,
   },
 ];
+
+const activeNav: string = Astro.props!.activeNav;
 ---
 
 <ul id="menu-items" class="text-blue-900">
