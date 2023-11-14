@@ -3,7 +3,7 @@ import tailwind from "@astrojs/tailwind";
 
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
-// import cloudflare from "@astrojs/cloudflare";
+import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,7 +22,7 @@ export default defineConfig({
     },
   },
   scopedStyleStrategy: "where",
-  output: "static",
-  //output: "server",
-  //adapter: cloudflare(),
+  //output: "static",
+  output: "server",
+  adapter: cloudflare(),
 });
