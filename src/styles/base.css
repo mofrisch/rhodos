@@ -5,9 +5,6 @@
 @layer base {
   html {
     @apply antialiased;
-    font-family: "Roboto Flex", sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
   }
 
   body {

@@ -46,7 +46,7 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Mail",
-    href: "mailto:info@restaurant-rhodos.net",
+    href: "mailto:info@rhodos-weiterstadt.de",
     linkTitle: `Send an email to ${SITE.title}`,
     active: true,
   },

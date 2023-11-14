@@ -10,8 +10,8 @@ const { item } = Astro.props;
 const pathname = new URL(Astro.request.url).pathname;
 ---
 
-<li>
-  <a href={item.url} class={pathname == item.url ? "underline" : ""}>
+<li class="flex justify-center text-blue-800">
+  <a href={item.url} class={item.url == pathname ? "underline" : ""}>
     {item.title}
   </a>
 </li>

@@ -30,6 +30,6 @@ const menuItems = [
 const activeNav: string = Astro.props!.activeNav;
 ---
 
-<ul id="menu-items" class="text-blue-900">
+<ul id="menu-items" class="my-2 text-blue-900">
   {menuItems.map(item => <MenuItem {item} />)}
 </ul>

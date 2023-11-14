@@ -10,11 +10,14 @@ import Logo from "../assets/images/logo.png";
   <div
     class="header__inner rounded-t-lg bg-gradient-to-r from-blue-100 to-blue-600"
   >
-    <a class="header__logo flex items-center space-x-2" href="/">
+    <a
+      class="header__logo mx-2 flex items-center justify-center space-x-2"
+      href="/"
+    >
       <Image src={Logo} alt={SITE.title} width="48" />
       <p>{SITE.title}</p>
     </a>
-    <div class="header__navigation">
+    <div class="header__navigation flex justify-center">
       <Navigation />
     </div>
   </div>
