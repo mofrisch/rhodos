@@ -9,23 +9,33 @@ const menuItems = [
     activeNav: true,
   },
   {
-    title: "About",
-    url: "/about",
+    title: "Mittagskarte",
+    url: "/lunch",
     activeNav: false,
   },
   {
-    title: "Blog",
-    url: "/blog",
+    title: "Speisen",
+    url: "/menu",
     activeNav: false,
   },
   {
-    title: "Contact",
+    title: "Getränke",
+    url: "/drinks",
+    activeNav: false,
+  },
+  {
+    title: "Kontakt",
     url: "/contact",
+    activeNav: false,
+  },
+  {
+    title: "Über uns",
+    url: "/about",
     activeNav: false,
   },
 ];
 ---
 
-<ul id="menu-items" class="display-none text-blue-900 sm:flex">
+<ul id="menu-items" class="text-blue-900">
   {menuItems.map(item => <MenuItem {item} />)}
 </ul>
