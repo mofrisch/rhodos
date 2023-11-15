@@ -4,6 +4,12 @@ import Navigation from "./Navigation.astro";
 import { Image } from "astro:assets";
 import TitleImage from "../assets/images/title-page.jpg";
 import Logo from "../assets/images/logo.png";
+
+export interface Props {
+  current: string;
+}
+
+const { current } = Astro.props;
 ---
 
 <header class="mx-auto w-full max-w-6xl">
@@ -18,7 +24,7 @@ import Logo from "../assets/images/logo.png";
       <p>{SITE.title}</p>
     </a>
     <div class="header__navigation flex justify-center">
-      <Navigation />
+      <Navigation {current} />
     </div>
   </div>
   <div class="mx-auto flex items-center justify-center">
