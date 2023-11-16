@@ -26,14 +26,8 @@ const menuItems = [
     url: "/about",
   },
 ];
-
-export interface Props {
-  current: string;
-}
-
-const current: string = Astro.props.current;
 ---
 
 <ul id="menu-items" class="my-2 text-blue-900">
-  {menuItems.map(item => <MenuItem {item} {current} />)}
+  {menuItems.map(item => <MenuItem {item} />)}
 </ul>

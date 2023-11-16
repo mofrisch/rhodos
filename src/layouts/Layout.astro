@@ -8,7 +8,6 @@ import Footer from "@components/Footer.astro";
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export interface Props {
-  current: string;
   title?: string;
   author?: string;
   description?: string;
@@ -17,7 +16,6 @@ export interface Props {
 }
 
 const {
-  current,
   title = SITE.title,
   author = SITE.author,
   description = SITE.desc,
@@ -75,7 +73,7 @@ const socialImageURL = new URL(ogImage ?? SITE.ogImage ?? "og.png", Astro.url.or
     <ViewTransitions />
   </head>
   <body>
-    <Header {current} />
+    <Header />
     <main>
       <slot />
     </main>
