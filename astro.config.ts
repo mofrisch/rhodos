@@ -10,6 +10,6 @@ export default defineConfig({
   integrations: [sitemap(), tailwind()],
   output: "server",
   adapter: cloudflare({
-    imageService: "passthrough",
+    imageService: "cloudflare",
   }),
 });
