@@ -7,7 +7,7 @@ export interface Props {
 }
 
 const { src, alt, w, h } = Astro.props;
-const site = `https://rhodos-weiterstadt.de/cdn-cgi/image/format=avif,width=${w},height=${h}/`;
+const site = `https://rhodos-weiterstadt.de/cdn-cgi/image/format=auto,width=${w},height=${h}/`;
 const csrc = site + src;
 ---
 
