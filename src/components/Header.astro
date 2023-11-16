@@ -1,9 +1,7 @@
 ---
 import { SITE } from "@config";
 import Navigation from "./Navigation.astro";
-import { Image } from "astro:assets";
-import TitleImage from "../assets/images/title-page.jpg";
-import Logo from "../assets/images/logo.png";
+import Image from "./Image.astro";
 
 export interface Props {
   current: string;
@@ -15,7 +13,8 @@ const { current } = Astro.props;
 <header class="mx-auto w-full max-w-6xl">
   <div class="header__inner rounded-t-lg bg-gradient-to-r from-blue-100 to-blue-600">
     <a class="header__logo mx-2 flex items-center justify-center space-x-2" href="/">
-      <img src="/assets/images/logo.png" ; alt="Griechische Fahne" width="48" />
+      <Image src="assets/images/logo.png" alt="Griechische Fahne" w="48" h="48" />
+
       <p>{SITE.title}</p>
     </a>
     <div class="header__navigation flex justify-center">
@@ -24,7 +23,7 @@ const { current } = Astro.props;
   </div>
   <div class="mx-auto flex items-center justify-center">
     <div class="relative flex max-w-6xl">
-      <img src="/assets/images/title-page.jpg" alt="Willkommen im Restaurant Rhodos!" />
+      <Image src="assets/images/title-page.jpg" alt="Willkommen im Restaurant Rhodos" w="1152" h="258" />
     </div>
   </div>
 </header>

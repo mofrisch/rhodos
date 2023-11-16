@@ -9,7 +9,5 @@ export default defineConfig({
   site: SITE.website,
   integrations: [sitemap(), tailwind()],
   output: "server",
-  adapter: cloudflare({
-    imageService: "cloudflare",
-  }),
+  adapter: cloudflare(),
 });
