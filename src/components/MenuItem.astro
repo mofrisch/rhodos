@@ -6,9 +6,7 @@ export interface Props {
   };
   current: string;
 }
-
 const { item, current } = Astro.props;
-const pathname = new URL(Astro.request.url).pathname;
 ---
 
 <li class="flex justify-center text-blue-800">
