@@ -1,12 +1,5 @@
 ---
-export interface Props {
-  item: {
-    title: string;
-    url: string;
-  };
-  current: string;
-}
-const { item, current } = Astro.props;
+const { item } = Astro.props;
 const pathname = Astro.url.pathname;
 ---
 
