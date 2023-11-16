@@ -5,9 +5,6 @@ export const SITE: Site = {
   author: "Moritz Frisch",
   desc: "Dies ist die Seite des Restaurants Rhodos in Weiterstadt.",
   title: "Restaurant Rhodos",
-  ogImage: "",
-  lightAndDarkMode: true,
-  postPerPage: 3,
 };
 
 export const LOCALE = ["de-DE"]; // set to [] to use the environment default
