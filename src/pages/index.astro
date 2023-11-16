@@ -3,9 +3,10 @@ import Layout from "@layouts/Layout.astro";
 import { Image } from "astro:assets";
 
 import StatueImage from "../assets/images/title.jpg";
+const current = "";
 ---
 
-<Layout>
+<Layout {current}>
   <section>
     <div class="flex items-center justify-center">
       <h1 class="my-4 mr-2 text-3xl font-bold sm:my-8 sm:text-5xl">
@@ -32,6 +33,7 @@ import StatueImage from "../assets/images/title.jpg";
       <Image
         class="m-auto mr-10 w-64 rounded-lg shadow-xl sm:my-8"
         src={StatueImage}
+        width="256"
         widths={[256, 512, 768, 1024, 2048]}
         alt="Statue"
       />

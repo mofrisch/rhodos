@@ -4,14 +4,15 @@ export interface Props {
     title: string;
     url: string;
   };
+  current: string;
 }
 
-const { item } = Astro.props;
+const { item, current } = Astro.props;
 const pathname = new URL(Astro.request.url).pathname;
 ---
 
 <li class="flex justify-center text-blue-800">
-  <a href={item.url} class={item.url == pathname ? "underline" : ""}>
+  <a href={item.url} class={current === item.url.slice(1) ? "underline" : ""}>
     {item.title}
   </a>
 </li>

@@ -27,9 +27,13 @@ const menuItems = [
   },
 ];
 
-const activeNav: string = Astro.props!.activeNav;
+export interface Props {
+  current: string;
+}
+
+const current: string = Astro.props.current;
 ---
 
 <ul id="menu-items" class="my-2 text-blue-900">
-  {menuItems.map(item => <MenuItem {item} />)}
+  {menuItems.map(item => <MenuItem {item} {current} />)}
 </ul>
