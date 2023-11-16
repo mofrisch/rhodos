@@ -12,7 +12,7 @@ const pathname = new URL(Astro.request.url).pathname;
 ---
 
 <li class="flex justify-center text-blue-800">
-  <a href={item.url} class={current == item.url.slice(1) ? "underline" : ""}>
+  <a href={item.url} class={current === item.url.slice(1) ? "underline" : ""}>
     {item.title}
   </a>
 </li>
