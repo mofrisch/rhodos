@@ -1,14 +1,28 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 const title = "Speisen";
 const current = "menu";
+const starters = await getCollection("starters");
 ---
 
 <Layout>
   <section>
     <h1 class="mr-2">
       {title}
-    </h1>
-    <p>Hier kommt die Speisekarte hin.</p>
+    </h1>{
+      starters.map(starter => (
+        <div class="mb-4 flex flex-col items-center justify-between md:flex-row">
+          <div class="mb-4 flex flex-col items-center justify-between md:flex-row">
+            <div class="flex flex-col items-center justify-between">
+              <h2 class="mb-2 text-2xl font-bold">{starter.data.title}</h2>
+            </div>
+            <div class="flex flex-col items-center justify-between">
+              <p class="text-sm text-gray-600">{starter.data.price}</p>
+            </div>
+          </div>
+        </div>
+      ))
+    }
   </section>
 </Layout>

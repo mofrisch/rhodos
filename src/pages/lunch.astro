@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Meal from "@components/Meal.astro";
 const title = "Mittagskarte:";
-const current = "lunch";
 const posts = await getCollection("lunch");
 ---
 
