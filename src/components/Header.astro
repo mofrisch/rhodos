@@ -5,16 +5,17 @@ import Image from "./Image.astro";
 ---
 
 <header class="mx-auto w-full max-w-6xl">
-  <div class="header__inner rounded-t-lg bg-gradient-to-r from-blue-100 to-blue-600">
-    <a class="header__logo mx-2 flex items-center justify-center space-x-2" href="/">
+  <!-- Title Bar -->
+  <div class="header__inner rounded-t-lg bg-gradient-to-r from-blue-100 to-blue-600 p-4 lg:grid lg:grid-cols-2">
+    <a class="header__logo mx-2 flex items-center justify-center space-x-2 lg:justify-start" href="/">
       <img src="/img/Flag_of_Greece.svg" alt="Griechische Fahne" width="48" height="32" />
-
       <p>{SITE.title}</p>
     </a>
-    <div class="header__navigation flex justify-center">
+    <div class="header__navigation flex justify-center lg:justify-end lg:text-blue-200">
       <Navigation />
     </div>
   </div>
+  <!-- Title Bar Picture -->
   <div class="mx-auto flex items-center justify-center">
     <div class="relative flex max-w-6xl">
       <img src="/img/titlebar-2048.avif" alt="Willkommen im Restaurant Rhodos" width="1152" height="258" />

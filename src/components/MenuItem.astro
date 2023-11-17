@@ -3,7 +3,7 @@ const { item } = Astro.props;
 const pathname = Astro.url.pathname;
 ---
 
-<li class="flex justify-center hover:text-blue-50">
+<li class="flex justify-center hover:text-blue-50 lg:hover:text-blue-900">
   <a href={item.url} class={pathname == item.url ? "underline" : ""}>
     {item.title}
   </a>
