@@ -7,16 +7,18 @@ const lunch = defineCollection({
     id: z.string(),
     title: z.string(),
     price: z.number(),
+    cat: z.string(),
   }),
 });
 
-const starters = defineCollection({
+const meals = defineCollection({
   type: "content",
   schema: z.object({
-    id: z.string(),
+    id: z.number(),
     title: z.string(),
     price: z.number(),
+    cat: z.string(),
   }),
 });
 
-export const collections = { lunch, starters };
+export const collections = { lunch, meals };

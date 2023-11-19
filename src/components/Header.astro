@@ -1,24 +1,34 @@
 ---
-import { SITE } from "@config";
-import Navigation from "./Navigation.astro";
-import Image from "./Image.astro";
+
 ---
 
-<header class="mx-auto w-full max-w-6xl">
-  <!-- Title Bar -->
-  <div class="header__inner rounded-t-lg bg-gradient-to-r from-blue-100 to-blue-600 p-4 lg:grid lg:grid-cols-2">
+<div class="navbar bg-gradient-to-r from-blue-100 to-blue-600">
+  <div class="flex-1">
     <a class="header__logo mx-2 flex items-center justify-center space-x-2 lg:justify-start" href="/">
       <img src="/img/Flag_of_Greece.svg" alt="Griechische Fahne" width="48" height="32" />
-      <p>{SITE.title}</p>
-    </a>
-    <div class="header__navigation flex justify-center lg:justify-end lg:text-blue-200">
-      <Navigation />
-    </div>
+      <p>Restaurant Rhodos</p></a
+    >
   </div>
-  <!-- Title Bar Picture -->
-  <div class="mx-auto flex items-center justify-center">
-    <div class="relative flex max-w-6xl">
-      <img src="/img/titlebar-2048.avif" alt="Willkommen im Restaurant Rhodos" width="1152" height="258" />
-    </div>
+
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1 text-blue-100">
+      <li><a href="/">Home</a></li>
+      <li><a href="/lunch">Mittagskarte</a></li>
+      <li>
+        <details>
+          <summary>Speisen</summary>
+          <ul class="bg-blue-600 p-2">
+            <li><a href="/soups">Suppen</a></li>
+            <li><a href="/starters">Vorspeisen</a></li>
+          </ul>
+        </details>
+      </li>
+      <li><a href="/drinks">Getränke</a></li>
+      <li><a href="/contact">Kontakt</a></li>
+      <li><a href="/about">Über uns</a></li>
+    </ul>
   </div>
-</header>
+</div>
+<div class="mx-auto flex items-center justify-center">
+  <img src="/img/titlebar-2048.avif" alt="Willkommen im Restaurant Rhodos" width="1280" />
+</div>
