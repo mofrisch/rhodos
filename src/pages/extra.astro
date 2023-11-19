@@ -1,9 +1,9 @@
 ---
 import Meal from "@components/Meal.astro";
 import SingleMenu from "@layouts/SingleMenu.astro";
-import { getCollection } from "astro:content";
-const title = "Käse Spezialitäten";
-const coll = "cheese";
+import { getCollection, getEntries } from "astro:content";
+const title = "Extra Beilagen";
+const coll = "extra";
 const entries = await getCollection(coll);
 ---
 
