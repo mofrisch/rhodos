@@ -29,7 +29,7 @@ const { Content } = await entry.render();
     <div class="flex w-full">
       <div class="flex-auto">
         <div class="hover:text-skin-accent w-full flex-1 text-lg">
-          <a href={`/lunch/${meal.slug}/`}> {meal.data.title}</a>
+          <a href={`/${coll}/${meal.slug}/`}> {meal.data.title}</a>
         </div>
         <div>
           <Content />
