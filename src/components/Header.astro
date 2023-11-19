@@ -1,5 +1,12 @@
 ---
-
+import type { string } from "astro/zod";
+const pathname = Astro.url.pathname;
+const check_active = (path: string) => {
+  if (pathname === path) {
+    return "underline";
+  }
+  return "";
+};
 ---
 
 <div class="navbar bg-gradient-to-r from-blue-100 to-blue-600">
@@ -12,20 +19,21 @@
 
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1 text-blue-100">
-      <li><a href="/">Home</a></li>
-      <li><a href="/lunch">Mittagskarte</a></li>
+      <li><a href="/" class={check_active("/")}>Home</a></li>
+      <li><a href="/lunch" class={check_active("/lunch")}>Mittagskarte</a></li>
       <li>
         <details>
           <summary>Speisen</summary>
           <ul class="bg-blue-600 p-2">
-            <li><a href="/soups">Suppen</a></li>
-            <li><a href="/starters">Vorspeisen</a></li>
+            <li><a href="/soups" class={check_active("/soups")}>Suppen</a></li>
+            <li><a href="/starters" class={check_active("/starters")}>Vorspeisen</a></li>
+            <li><a href="/fish" class={check_active("/fish")}>Fisch&nbsp;Spezialitäten</a></li>
           </ul>
         </details>
       </li>
-      <li><a href="/drinks">Getränke</a></li>
-      <li><a href="/contact">Kontakt</a></li>
-      <li><a href="/about">Über uns</a></li>
+      <li><a href="/drinks" class={check_active("/drinks")}>Getränke</a></li>
+      <li><a href="/contact" class={check_active("/contact")}>Kontakt</a></li>
+      <li><a href="/about" class={check_active("/about")}>Über uns</a></li>
     </ul>
   </div>
 </div>
