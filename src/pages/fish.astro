@@ -1,19 +1,12 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import getCategory from "@utils/getCategory";
-const title = "Fisch Spezialitäten";
-const data = await getCategory("Fisch");
+import Meal from "@components/Meal.astro";
+import SingleMenu from "@layouts/SingleMenu.astro";
+import { getCollection } from "astro:content";
+const title = "Suppen";
+const coll = "fish";
+const soups = await getCollection(coll);
 ---
 
-<Layout>
-  <section class="w-max-6xl">
-    <h1 class="m-auto py-4 text-center text-3xl">
-      {title}
-    </h1>
-    <div class="w-full">
-      <ul>
-        {data.map(meal => <li class="w-full">{meal.data.title}</li>)}
-      </ul>
-    </div>
-  </section>
-</Layout>
+<SingleMenu {title}>
+  {soups.map(meal => <Meal meal={meal} coll={coll} />)}
+</SingleMenu>

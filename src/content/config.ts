@@ -4,21 +4,13 @@ import { defineCollection, z } from "astro:content";
 const lunch = defineCollection({
   type: "content",
   schema: z.object({
-    id: z.string(),
     title: z.string(),
     price: z.number(),
-    cat: z.string(),
   }),
 });
 
-const meals = defineCollection({
-  type: "content",
-  schema: z.object({
-    id: z.number(),
-    title: z.string(),
-    price: z.number(),
-    cat: z.string(),
-  }),
-});
+const fish = lunch;
+const soups = lunch;
+const starters = lunch;
 
-export const collections = { lunch, meals };
+export const collections = { lunch, fish, soups, starters };

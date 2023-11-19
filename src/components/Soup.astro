@@ -3,9 +3,9 @@ import { getEntry } from "astro:content";
 import euro from "../utils/euro";
 
 export interface Props {
-  coll: string;
   meal: {
     data: {
+      id: string;
       title: string;
       price: number;
     };
@@ -13,10 +13,8 @@ export interface Props {
   };
 }
 
-// const coll = "lunch";
-
-const { meal, coll } = Astro.props;
-const entry = await getEntry(coll, meal.slug);
+const { meal } = Astro.props;
+const entry = await getEntry("soups", meal.slug);
 if (!entry) throw new Error(`Could not find entry for ${meal.slug}`);
 const { Content } = await entry.render();
 ---
