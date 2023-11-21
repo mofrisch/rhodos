@@ -5,8 +5,9 @@ import { getCollection, getEntries } from "astro:content";
 const title = "Extra Beilagen";
 const coll = "extra";
 const entries = await getCollection(coll);
+const current = "/" + coll;
 ---
 
-<SingleMenu {title}>
+<SingleMenu {title} {current}>
   {entries.map(meal => <Meal meal={meal} coll={coll} />)}
 </SingleMenu>

@@ -9,21 +9,10 @@ const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export interface Props {
   title?: string;
-  author?: string;
-  description?: string;
-  ogImage?: string;
-  canonicalURL?: string;
+  current?: string;
 }
 
-const {
-  title = SITE.title,
-  author = SITE.author,
-  description = SITE.desc,
-  ogImage = SITE.ogImage,
-  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
-} = Astro.props;
-
-const socialImageURL = new URL(ogImage ?? SITE.ogImage ?? "og.png", Astro.url.origin).href;
+const { title = SITE.title, current } = Astro.props;
 ---
 
 <!doctype html>
@@ -38,14 +27,13 @@ const socialImageURL = new URL(ogImage ?? SITE.ogImage ?? "og.png", Astro.url.or
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
-    <link rel="canonical" href={canonicalURL} />
+
     <meta name="generator" content={Astro.generator} />
 
     <!-- General Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
-    <meta name="description" content={description} />
-    <meta name="author" content={author} />
+
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     {
@@ -59,7 +47,7 @@ const socialImageURL = new URL(ogImage ?? SITE.ogImage ?? "og.png", Astro.url.or
   </head>
 
   <body>
-    <Header />
+    <Header {current} />
     <main>
       <slot />
     </main>

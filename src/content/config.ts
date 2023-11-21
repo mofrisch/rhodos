@@ -6,17 +6,11 @@ const lunch = defineCollection({
   schema: z.object({
     title: z.string(),
     price: z.number(),
+    current: z.string().optional(),
   }),
 });
 
-const fish = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    price: z.number(),
-  }),
-});
-
+const fish = lunch;
 const soups = lunch;
 const starters = lunch;
 const cheese = lunch;

@@ -1,13 +1,13 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
 import Meal from "@components/Meal.astro";
 import SingleMenu from "@layouts/SingleMenu.astro";
 const title = "Mittagskarte:";
 const meals = await getCollection("lunch");
 const coll = "lunch";
+const current = "/lunch";
 ---
 
-<SingleMenu {title}>
+<SingleMenu {title} {current}>
   {meals.map(meal => <Meal meal={meal} coll={coll} />)}
 </SingleMenu>

@@ -1,12 +1,15 @@
 ---
-import type { string } from "astro/zod";
-const pathname = Astro.url.pathname;
+export interface Props {
+  current?: string;
+}
+const current = Astro.props.current;
 const check_active = (path: string) => {
-  if (pathname === path) {
+  if (current === path) {
     return "underline";
   }
   return "";
 };
+console.log(current);
 ---
 
 <div class="navbar bg-gradient-to-r from-blue-100 to-blue-500">

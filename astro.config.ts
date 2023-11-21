@@ -8,6 +8,5 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   site: SITE.website,
   integrations: [sitemap(), tailwind()],
-  output: "server",
-  adapter: cloudflare(),
+  output: "static",
 });

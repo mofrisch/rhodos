@@ -4,9 +4,10 @@ import SingleMenu from "@layouts/SingleMenu.astro";
 import { getCollection } from "astro:content";
 const title = "Suppen";
 const coll = "soups";
-const soups = await getCollection(coll);
+const entries = await getCollection(coll);
+const current = "/" + coll;
 ---
 
-<SingleMenu {title}>
-  {soups.map(meal => <Meal meal={meal} coll={coll} />)}
+<SingleMenu {title} {current}>
+  {entries.map(meal => <Meal meal={meal} coll={coll} />)}
 </SingleMenu>
