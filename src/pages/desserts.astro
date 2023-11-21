@@ -1,10 +1,10 @@
 ---
 import Meal from "@components/Meal.astro";
-import SingleMenu from "@layouts/SingleMenu.astro";
+import SingleMenu from "@layouts/SingleMenuLayout.astro";
 import { getCollection } from "astro:content";
 const title = "Desserts";
 const coll = "desserts";
-const entries = await getCollection(coll);
+const entries = await getCollection("meals");
 const current = "/" + coll;
 ---
 

@@ -1,0 +1,20 @@
+---
+import Meal from "@components/Meal.astro";
+import SingleMenuLayout from "@layouts/SingleMenuLayout.astro";
+import { getCollection } from "astro:content";
+
+export interface Props {
+  title: string;
+  coll: string;
+}
+
+const { title, coll } = Astro.props;
+
+const entries = await getCollection("meals");
+const filtered = entries.filter(meal => meal.slug.split("/")[0] === coll);
+const current = "/" + coll;
+---
+
+<SingleMenuLayout {title} {current}>
+  {filtered.map(meal => <Meal meal={meal} coll={coll} />)}
+</SingleMenuLayout>

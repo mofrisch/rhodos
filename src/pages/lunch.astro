@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import Meal from "@components/Meal.astro";
-import SingleMenu from "@layouts/SingleMenu.astro";
+import Lunch from "@components/Lunch.astro";
+import SingleMenu from "@layouts/SingleMenuLayout.astro";
 const title = "Mittagskarte:";
 const meals = await getCollection("lunch");
 const coll = "lunch";
@@ -9,5 +9,5 @@ const current = "/lunch";
 ---
 
 <SingleMenu {title} {current}>
-  {meals.map(meal => <Meal meal={meal} coll={coll} />)}
+  {meals.map(meal => <Lunch meal={meal} coll={coll} />)}
 </SingleMenu>
