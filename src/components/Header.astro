@@ -13,8 +13,8 @@ console.log(current);
 ---
 
 <div class="navbar-vertical bg-gradient-to-r from-blue-100 to-blue-500 lg:navbar">
-  <div class="lg:navbar-start">
-    <a class="header__logo mx-2 flex items-center justify-center space-x-2 lg:justify-start" href="/">
+  <div class="pt-2 lg:navbar-start lg:pt-0">
+    <a class="header__logo m-2 flex items-center justify-center space-x-2 lg:justify-start" href="/">
       <img src="/img/Flag_of_Greece.svg" alt="Griechische Fahne" width="48" height="32" />
       <p>Restaurant Rhodos</p></a
     >
@@ -24,7 +24,7 @@ console.log(current);
     <ul class="menu items-center text-blue-800 lg:menu-horizontal">
       <li><a href="/" class={check_active("/")}>Home</a></li>
       <li><a href="/lunch" class={check_active("/lunch")}>Mittagskarte</a></li>
-      <div class="dropdown dropdown-hover m-auto">
+      <div class="dropdown dropdown-hover m-2">
         <label tabindex="0">Speisen</label>
         <ul tabindex="0" class="menu dropdown-content z-[1] w-52 rounded-box bg-blue-400 p-2">
           <li><a href="/soups" class={check_active("/soups")}>Suppen</a></li>
