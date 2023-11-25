@@ -1,13 +1,5 @@
 ---
-import Meal from "@components/Meal.astro";
-import SingleMenu from "@layouts/SingleMenuLayout.astro";
-import { getCollection } from "astro:content";
-const title = "Fisch Spezialitäten";
-const coll = "fish";
-const entries = await getCollection("meals");
-const current = "/" + coll;
+import SingleMenu from "@components/SingleMenu.astro";
 ---
 
-<SingleMenu {title} {current}>
-  {entries.map(meal => <Meal meal={meal} coll={coll} />)}
-</SingleMenu>
+<SingleMenu title="Fisch-Spezialitäten" coll="fish" />
