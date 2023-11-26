@@ -1,6 +1,8 @@
 ---
+import NavBar from "./NavBar.astro";
+
 export interface Props {
-  current?: string;
+  current: string;
 }
 const current = Astro.props.current;
 const check_active = (path: string) => {
@@ -11,48 +13,9 @@ const check_active = (path: string) => {
 };
 ---
 
-<div class="navbar bg-gradient-to-r from-blue-100 to-blue-700">
-  <div class="pt-2 lg:navbar-start lg:pt-0">
-    <a class="header__logo m-2 flex items-center justify-center space-x-2 lg:justify-start" href="/">
-      <img src="/img/Flag_of_Greece.svg" alt="Griechische Fahne" width="48" height="32" />
-      <p>Restaurant Rhodos</p></a
-    >
-  </div>
+<NavBar {current} />
 
-  <div class="navbar-end hidden lg:flex">
-    <ul class="menu items-center lg:menu-horizontal">
-      <li><a href="/" class={check_active("/")}>Home</a></li>
-      <li><a href="/lunch" class={check_active("/lunch")}>Mittagskarte</a></li>
-      <div class="dropdown dropdown-hover m-2">
-        <label tabindex="0">Speisen</label>
-        <ul tabindex="0" class="menu dropdown-content z-[1] w-52 rounded-box bg-blue-400 p-2">
-          <li><a href="/soups" class={check_active("/soups")}>Suppen</a></li>
-          <li><a href="/starters" class={check_active("/starters")}>Vorspeisen</a></li>
-          <li><a href="/fish" class={check_active("/fish")}>Fisch&nbsp;Spezialitäten</a></li>
-          <li><a href="/cheese" class={check_active("/cheese")}>Käse&nbsp;Spezialitäten</a></li>
-          <li><a href="/salads" class={check_active("/salads")}>Salate</a></li>
-          <li><a href="/gyros" class={check_active("/gyros")}>Drehspieß&nbsp;Spezialitäten</a></li>
-          <li><a href="/grill" class={check_active("/grill")}>Grill&nbsp;Spezialitäten</a></li>
-          <li><a href="/rumpsteak" class={check_active("/rumpstaek")}>Argentinisches&nbsp;Rumpsteak</a></li>
-          <li><a href="/grill-plates" class={check_active("/grill-plates")}>Grillplatten</a></li>
-          <li><a href="/oven" class={check_active("/oven")}>Aus&nbsp;dem&nbsp;Steinofen</a></li>
-          <li><a href="/veggie" class={check_active("/veggie")}>Vegetarische&nbsp;Gerichte</a></li>
-          <li><a href="/fish-plates" class={check_active("/fish-plates")}>Fischgerichte</a></li>
-          <li><a href="/schnitzel" class={check_active("/schnitzel")}>Schnitzel</a></li>
-          <li><a href="/kids" class={check_active("/kids")}>Für&nbsp;unsere&nbsp;kleinen&nbsp;Gäste</a></li>
-          <li><a href="/extra" class={check_active("/extra")}>Extra&nbsp;Beilagen</a></li>
-          <li><a href="/desserts" class={check_active("/desserts")}>Desserts</a></li>
-          <li><a href="/ice" class={check_active("/ice")}>Eis</a></li>
-        </ul>
-      </div>
-
-      <li><a href="/drinks" class={check_active("/drinks")}>Getränke</a></li>
-      <li><a href="/wine" class={check_active("/wine")}>Weine</a></li>
-      <li><a href="/contact" class={check_active("/contact")}>Kontakt</a></li>
-      <li><a href="/about" class={check_active("/about")}>Über uns</a></li>
-    </ul>
-  </div>
-</div>
+<!-- Titlebar -->
 <div class="mx-auto flex items-center justify-center">
   <img src="/img/titlebar-2048.avif" alt="Willkommen im Restaurant Rhodos" width="1280" />
 </div>
