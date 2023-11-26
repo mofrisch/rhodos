@@ -9,4 +9,5 @@ export default defineConfig({
   site: SITE.website,
   integrations: [sitemap(), tailwind()],
   output: "static",
+  build: { format: "file" },
 });
