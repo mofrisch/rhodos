@@ -3,39 +3,38 @@ import { getEntry } from "astro:content";
 import euro from "../utils/euro";
 
 export interface Props {
-  post: {
+  coll: string;
+  meal: {
     data: {
-      id: string;
       title: string;
       price: number;
     };
     slug: string;
-    
   };
 }
 
-const { post} = Astro.props;
-const entry = await getEntry("lunch", post.slug);
-if (!entry) throw new Error(`Could not find entry for ${post.slug}`);
+const { meal, coll } = Astro.props;
+const entry = await getEntry("meals", meal.slug);
+if (!entry) throw new Error(`Could not find entry for ${meal.slug}`);
 const { Content } = await entry.render();
 ---
 
 <li class="mb-5">
   <div class="flex w-full justify-items-start">
     <div class="px-2 text-lg">
-      <span>{post.data.id}.</span>
+      <span>{meal.slug.split("/")[1].toUpperCase()}.</span>
     </div>
     <div class="flex w-full">
       <div class="flex-auto">
-        <div class="w-full flex-1 text-lg hover:text-skin-accent">
-          <a href={`/lunch/${post.slug}/`}> {post.data.title}</a>
+        <div class="hover:text-skin-accent w-full flex-1 text-lg">
+          <a href={meal.slug}> {meal.data.title}</a>
         </div>
         <div>
           <Content />
         </div>
       </div>
       <div>
-        <span class="text-lg">{euro.format(post.data.price)}</span>
+        <span class="text-lg">{euro.format(meal.data.price)}</span>
       </div>
     </div>
   </div>

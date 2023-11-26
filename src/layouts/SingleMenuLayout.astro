@@ -1,0 +1,23 @@
+---
+import { SITE } from "@config";
+import Layout from "./Layout.astro";
+
+export interface Props {
+  title: string;
+  current: string;
+}
+const { title, current } = Astro.props;
+---
+
+<Layout title={`${title} | ${SITE.title}`} {current}>
+  <section class="w-max-6xl">
+    <h1 class="m-auto py-4 text-center text-3xl">
+      {title}
+    </h1>
+    <div class="w-full">
+      <ul>
+        <slot />
+      </ul>
+    </div>
+  </section>
+</Layout>

@@ -1,9 +1,9 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Image from "@components/Image.astro";
+export const current = "/";
 ---
 
-<Layout>
+<Layout {current}>
   <section>
     <div class="flex items-center justify-center">
       <h1 class="my-4 mr-2 text-3xl font-bold sm:my-8 sm:text-5xl">Willkommen im Restaurant Rhodos!</h1>
@@ -20,7 +20,7 @@ import Image from "@components/Image.astro";
     </div>
   </section>
 
-  <section class="my-8">
+  <section class="mt-8">
     <div class="flex flex-col items-center sm:flex-row">
       <div class="m-auto mr-10 w-64 rounded-lg shadow-xl">
         <img src="/img/statue-512.avif" width="256" height="256" alt="Statue" />

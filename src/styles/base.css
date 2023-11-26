@@ -8,23 +8,10 @@
   }
 
   body {
-    @apply mx-auto flex w-full max-w-6xl flex-col justify-center;
-  }
-
-  main {
-    @apply bg-blue-50 text-blue-900;
+    @apply mx-auto w-full  max-w-7xl bg-blue-50 text-blue-900;
   }
 
   section {
     @apply px-8 py-2;
   }
-}
-
-/* roboto-flex-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: "Roboto Flex";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/roboto-flex-v9-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }

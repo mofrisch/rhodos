@@ -4,8 +4,8 @@ import { getCollection } from "astro:content";
 import euro from "@utils/euro";
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection("starters");
-  return blogEntries.map(entry => ({
+  const entries = await getCollection("meals");
+  return entries.map(entry => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
