@@ -1,7 +1,7 @@
 ---
 import { SITE } from "@config";
 import "@styles/base.css";
-import { ViewTransitions } from "astro:transitions";
+
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 
@@ -9,7 +9,7 @@ const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export interface Props {
   title?: string;
-  current?: string;
+  current: string;
 }
 
 const { title = SITE.title, current } = Astro.props;
@@ -26,24 +26,12 @@ const { title = SITE.title, current } = Astro.props;
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
-
     <meta name="generator" content={Astro.generator} />
-
+    <meta name="description" content="Dies ist die Website des Restaurants Rhodos in Weiterstadt" />
     <!-- General Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
-
     <link rel="sitemap" href="/sitemap-index.xml" />
-
-    {
-      // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
-      // include google-site-verification tag in the heading
-      // Learn more: https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag
-      googleSiteVerification && <meta name="google-site-verification" content={googleSiteVerification} />
-    }
-
-    <ViewTransitions />
   </head>
 
   <body>
