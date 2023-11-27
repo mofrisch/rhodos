@@ -29,8 +29,8 @@ const check_active = (path: string) => {
     </div>
     <MenuItems class="hidden lg:flex lg:text-blue-50">
       <ul class="flex flex-col lg:flex-row lg:gap-5">
-        <li><a href="/" class={check_active("/")}>Home</a></li>
-        <li><a href="/lunch" class={check_active("/lunch")}>Mittagskarte</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/lunch">Mittagskarte</a></li>
 
         <li>
           <Dropdown class="group">
@@ -50,33 +50,41 @@ const check_active = (path: string) => {
             <DropdownItems class="relative w-full">
               <div class="absolute top-0 bg-blue-600 px-4 py-2 text-blue-50">
                 <ul>
-                  <li><a href="/soups" class={check_active("/soups")}>Suppen</a></li>
-                  <li><a href="/starters" class={check_active("/starters")}>Vorspeisen</a></li>
-                  <li><a href="/fish" class={check_active("/fish")}>Fisch&nbsp;Spezialitäten</a></li>
-                  <li><a href="/cheese" class={check_active("/cheese")}>Käse&nbsp;Spezialitäten</a></li>
-                  <li><a href="/salads" class={check_active("/salads")}>Salate</a></li>
-                  <li><a href="/gyros" class={check_active("/gyros")}>Drehspieß&nbsp;Spezialitäten</a></li>
-                  <li><a href="/grill" class={check_active("/grill")}>Grill&nbsp;Spezialitäten</a></li>
-                  <li><a href="/rumpsteak" class={check_active("/rumpstaek")}>Argentinisches&nbsp;Rumpsteak</a></li>
-                  <li><a href="/grill_plates" class={check_active("/grill_plates")}>Grillplatten</a></li>
-                  <li><a href="/oven" class={check_active("/oven")}>Aus&nbsp;dem&nbsp;Steinofen</a></li>
-                  <li><a href="/veggie" class={check_active("/veggie")}>Vegetarische&nbsp;Gerichte</a></li>
-                  <li><a href="/fish_plates" class={check_active("/fish_plates")}>Fischgerichte</a></li>
-                  <li><a href="/schnitzel" class={check_active("/schnitzel")}>Schnitzel</a></li>
-                  <li><a href="/kids" class={check_active("/kids")}>Für&nbsp;unsere&nbsp;kleinen&nbsp;Gäste</a></li>
-                  <li><a href="/extra" class={check_active("/extra")}>Extra&nbsp;Beilagen</a></li>
-                  <li><a href="/desserts" class={check_active("/desserts")}>Desserts</a></li>
-                  <li><a href="/ice" class={check_active("/ice")}>Eis</a></li>
+                  <li><a href="/soups">Suppen</a></li>
+                  <li><a href="/starters">Vorspeisen</a></li>
+                  <li><a href="/fish">Fisch&nbsp;Spezialitäten</a></li>
+                  <li><a href="/cheese">Käse&nbsp;Spezialitäten</a></li>
+                  <li><a href="/salads">Salate</a></li>
+                  <li><a href="/gyros">Drehspieß&nbsp;Spezialitäten</a></li>
+                  <li><a href="/grill">Grill&nbsp;Spezialitäten</a></li>
+                  <li><a href="/rumpsteak">Argentinisches&nbsp;Rumpsteak</a></li>
+                  <li><a href="/grill_plates">Grillplatten</a></li>
+                  <li><a href="/oven">Aus&nbsp;dem&nbsp;Steinofen</a></li>
+                  <li><a href="/veggie">Vegetarische&nbsp;Gerichte</a></li>
+                  <li><a href="/fish_plates">Fischgerichte</a></li>
+                  <li><a href="/schnitzel">Schnitzel</a></li>
+                  <li><a href="/kids">Für&nbsp;unsere&nbsp;kleinen&nbsp;Gäste</a></li>
+                  <li><a href="/extra">Extra&nbsp;Beilagen</a></li>
+                  <li><a href="/desserts">Desserts</a></li>
+                  <li><a href="/ice">Eis</a></li>
                 </ul>
               </div>
             </DropdownItems>
           </Dropdown>
         </li>
-        <li><a href="/drinks" class={check_active("/drinks")}>Getränke</a></li>
-        <li><a href="/wine" class={check_active("/wine")}>Weine</a></li>
-        <li><a href="/contact" class={check_active("/contact")}>Kontakt</a></li>
-        <li><a href="/about" class={check_active("/about")}>Über&nbsp;uns</a></li>
+        <li><a href="/drinks">Getränke</a></li>
+        <li><a href="/wine">Weine</a></li>
+        <li><a href="/contact">Kontakt</a></li>
+        <li><a href="/about">Über&nbsp;uns</a></li>
       </ul>
     </MenuItems>
   </Astronav>
 </header>
+<script>
+  console.log(document.URL);
+  document.querySelectorAll("a").forEach(a => {
+    if (a.href === document.URL) {
+      a.classList.add("underline");
+    }
+  });
+</script>

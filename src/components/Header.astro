@@ -5,12 +5,6 @@ export interface Props {
   current: string;
 }
 const current = Astro.props.current;
-const check_active = (path: string) => {
-  if (current === path) {
-    return "underline";
-  }
-  return "";
-};
 ---
 
 <NavBar {current} />
