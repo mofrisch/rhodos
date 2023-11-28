@@ -5,7 +5,6 @@ const lunch = defineCollection({
   schema: z.object({
     title: z.string(),
     price: z.number(),
-    current: z.string().optional(),
   }),
 });
 

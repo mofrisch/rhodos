@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import loungeOpen from "img/lounge-open-1280.jpg";
 import Layout from "../layouts/Layout.astro";
 import SingleMenu from "@components/SingleMenu.astro";
+import { getCollection } from "astro:content";
+const cocktails = await getCollection("cocktails");
 ---
 
 <Layout>
@@ -53,7 +55,12 @@ import SingleMenu from "@components/SingleMenu.astro";
     </ul>
   </section>
 
-  <SingleMenu title="Cocktails" coll="cocktails" />
+  <section id="cocktailkarte">
+    <h3 class="mb-2 text-xl font-semibold">Unsere Cocktailkarte</h3>
+    <ul class="list-inside list-disc">
+      {cocktails.map(meal => <li>{meal.data.title}</li>)}
+    </ul>
+  </section>
 
   <section id="oeffnungszeiten" class="mb-8">
     <h3 class="mb-2 text-xl font-semibold">Öffnungszeiten</h3>

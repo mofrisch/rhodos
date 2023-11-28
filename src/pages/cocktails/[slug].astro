@@ -4,14 +4,15 @@ import { getCollection } from "astro:content";
 import euro from "@utils/euro";
 
 export async function getStaticPaths() {
-  const entries = await getCollection("meals");
-  return entries.map(entry => ({
+  const blogEntries = await getCollection("cocktails");
+  return blogEntries.map(entry => ({
     params: { slug: entry.slug },
     props: { entry },
   }));
 }
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
 ---
 
 <LunchLayout frontmatter={entry.data}>
