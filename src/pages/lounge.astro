@@ -1,13 +1,12 @@
 ---
-import { Image } from "astro:assets";
-import loungeOpen from "img/lounge-open-1280.jpg";
 import Layout from "../layouts/Layout.astro";
-import SingleMenu from "@components/SingleMenu.astro";
+
 import { getCollection } from "astro:content";
+import Cocktail from "@components/Cocktail.astro";
 const cocktails = await getCollection("cocktails");
 ---
 
-<Layout>
+<Layout titleImage="img/lounge-open-2048.jpg">
   <section id="willkommen" class="mb-8">
     <div class="my-8 flex items-center justify-center">
       <h1 class="text-5xl font-bold">Rhodos Lounge</h1>
@@ -18,7 +17,6 @@ const cocktails = await getCollection("cocktails");
       Cocktailkarte, die Billardtische, Dart und das gemütliche Ambiente machen die Kellerbar zu einem beliebten
       Treffpunkt.
     </p>
-    <Image src={loungeOpen} alt="Gemütliche Kellerbar im Restaurant Rhodos" class="mb-8 rounded-lg shadow-lg" />
   </section>
 
   <section id="attraktionen" class="mb-8">
@@ -57,8 +55,8 @@ const cocktails = await getCollection("cocktails");
 
   <section id="cocktailkarte">
     <h3 class="mb-2 text-xl font-semibold">Unsere Cocktailkarte</h3>
-    <ul class="list-inside list-disc">
-      {cocktails.map(meal => <li>{meal.data.title}</li>)}
+    <ul>
+      {cocktails.map(cocktail => <Cocktail {cocktail} />)}
     </ul>
   </section>
 

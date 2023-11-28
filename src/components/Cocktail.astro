@@ -3,8 +3,7 @@ import { getEntry } from "astro:content";
 import euro from "../utils/euro";
 
 export interface Props {
-  coll: string;
-  meal: {
+  cocktail: {
     data: {
       title: string;
       price: number;
@@ -13,27 +12,27 @@ export interface Props {
   };
 }
 
-const { meal } = Astro.props;
-const entry = await getEntry("meals", meal.slug);
-const { Content } = await entry!.render();
+const { cocktail } = Astro.props;
+const entry = await getEntry("cocktails", cocktail.slug);
+const { Content } = await entry.render();
 ---
 
 <li class="mb-5">
   <div class="flex w-full justify-items-start">
     <div class="px-2 text-lg">
-      <span>{meal.slug.split("/")[1].toUpperCase()}.</span>
+      <span>{cocktail.slug.toUpperCase()}.</span>
     </div>
     <div class="flex w-full">
       <div class="flex-auto">
         <div class="hover:text-skin-accent w-full flex-1 text-lg">
-          <a href={meal.slug}> {meal.data.title}</a>
+          <a href={`/cocktails/${cocktail.slug}/`}> {cocktail.data.title}</a>
         </div>
         <div>
           <Content />
         </div>
       </div>
       <div>
-        <span class="text-lg">{euro.format(meal.data.price)}</span>
+        <span class="text-lg">{euro.format(cocktail.data.price)}</span>
       </div>
     </div>
   </div>

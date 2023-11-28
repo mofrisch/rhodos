@@ -1,5 +1,14 @@
 ---
 import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems } from "astro-navbar";
+import { Picture } from "astro:assets";
+import myImage from "../img/titlebar-2048.jpg";
+import loungeImage from "../img/lounge-open-2048.jpg";
+export interface Props {
+  titleImage?: string;
+}
+
+const { titleImage } = Astro.props;
+const image = titleImage ? loungeImage : myImage;
 ---
 
 <header class="items-center gap-5 bg-gradient-to-r from-blue-50 to-blue-600 p-3 px-4 sm:flex">
@@ -63,7 +72,7 @@ import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems } from "astro-na
         </li>
         <li><a href="/drinks">Getränke</a></li>
         <li><a href="/wine">Weine</a></li>
-        <li><a href="lounge">Lounge</a></li>
+        <li><a href="/lounge">Lounge</a></li>
         <li><a href="/contact">Kontakt</a></li>
         <li><a href="/about">Über&nbsp;uns</a></li>
       </ul>
@@ -71,7 +80,7 @@ import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems } from "astro-na
   </Astronav>
 </header>
 <div class="mx-auto flex items-center justify-center">
-  <img src="/img/titlebar-2048.avif" alt="Willkommen im Restaurant Rhodos" width="1280" />
+  <Picture src={image} formats={["avif", "webp"]} alt="Willkommen im Restaurant Rhodos" />
 </div>
 
 <script>
