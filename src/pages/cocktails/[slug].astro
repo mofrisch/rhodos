@@ -2,6 +2,8 @@
 import LunchLayout from "@layouts/LunchLayout.astro";
 import { getCollection } from "astro:content";
 import euro from "@utils/euro";
+import { Picture } from "astro:assets";
+import Layout from "@layouts/Layout.astro";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("cocktails");
@@ -12,10 +14,15 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-
 ---
 
-<LunchLayout frontmatter={entry.data}>
-  <Content />
-  <p class="py-2">{euro.format(entry.data.price)}</p>
-</LunchLayout>
+<Layout titleImage="img/lounge-open">
+  <h1 class="my-8 flex justify-center text-4xl">{entry.data.title}</h1>
+  <div class="flex flex-row items-center justify-center">
+    <Picture src={entry.data.pic} alt={entry.data.title} />
+  </div>
+  <div class="my-4 flex justify-center text-lg">
+    <Content />
+  </div>
+  <p class="flex justify-center py-2 text-xl">{euro.format(entry.data.price)}</p>
+</Layout>

@@ -1,12 +1,15 @@
 ---
 import { getEntry } from "astro:content";
 import euro from "../utils/euro";
+import { Picture } from "astro:assets";
+import { type ImageMetadata } from "astro";
 
 export interface Props {
   cocktail: {
     data: {
       title: string;
       price: number;
+      pic: ImageMetadata;
     };
     slug: string;
   };
@@ -14,10 +17,11 @@ export interface Props {
 
 const { cocktail } = Astro.props;
 const entry = await getEntry("cocktails", cocktail.slug);
-const { Content } = await entry.render();
+const { Content } = await entry!.render();
 ---
 
-<li class="mb-5">
+<!--
+  <li class="mb-5">
   <div class="flex w-full justify-items-start">
     <div class="px-2 text-lg">
       <span>{cocktail.slug.toUpperCase()}.</span>
@@ -37,3 +41,24 @@ const { Content } = await entry.render();
     </div>
   </div>
 </li>
+-->
+<a href=`/cocktails/${cocktail.slug}/`>
+  <div class="flex max-w-sm flex-col overflow-hidden rounded shadow-lg">
+    <div class="flex-1 items-center justify-center">
+      <Picture src={cocktail.data.pic} formats={["avif", "webp"]} alt={cocktail.data.title} />
+    </div>
+
+    <div class="flex-1 px-6 py-4">
+      <div class="mb-2 text-xl font-bold">{cocktail.data.title}</div>
+      <p class="my-auto text-base text-gray-700">
+        <Content />
+      </p>
+    </div>
+
+    <div class="flex-end px-6 py-2">
+      <span class="mb-2 ml-32 inline-block rounded-full bg-blue-200 px-10 py-1 font-semibold text-blue-700"
+        >{euro.format(cocktail.data.price)}</span
+      >
+    </div>
+  </div>
+</a>

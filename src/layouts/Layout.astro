@@ -4,6 +4,7 @@ import "@styles/base.css";
 
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
+import { ViewTransitions, fade } from "astro:transitions";
 
 export interface Props {
   title?: string;
@@ -29,14 +30,23 @@ const { title = SITE.title, titleImage } = Astro.props;
     <title>{title}</title>
     <meta name="title" content={title} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <ViewTransitions />
   </head>
 
   <body>
-    <Header {titleImage} />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+    <div class="flex h-screen flex-col justify-between">
+      <div class="h-100">
+        <Header {titleImage} />
+      </div>
+      <div class="mb-auto">
+        <main transition:animate={fade({ duration: ".5s" })}>
+          <slot />
+        </main>
+      </div>
+      <div class="mb-h-50">
+        <Footer />
+      </div>
+    </div>
     <script>
       document.documentElement.classList.remove("no-js");
       document.documentElement.classList.add("js");

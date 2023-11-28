@@ -46,7 +46,7 @@ const image = titleImage ? loungeImage : myImage;
               </svg>
             </button>
             <DropdownItems class="relative w-full">
-              <div class="absolute top-0 bg-gradient-to-b from-blue-500 to-blue-50 px-4 py-2 text-blue-900">
+              <div class="absolute top-0 z-10 bg-gradient-to-b from-blue-500 to-blue-50 px-4 py-2 text-blue-900">
                 <ul>
                   <li><a href="/soups">Suppen</a></li>
                   <li><a href="/starters">Vorspeisen</a></li>
@@ -80,7 +80,7 @@ const image = titleImage ? loungeImage : myImage;
   </Astronav>
 </header>
 <div class="mx-auto flex items-center justify-center">
-  <Picture src={image} formats={["avif", "webp"]} alt="Willkommen im Restaurant Rhodos" />
+  <Picture src={image} formats={["avif", "webp"]} alt="Willkommen im Restaurant Rhodos" loading={"eager"} />
 </div>
 
 <script>

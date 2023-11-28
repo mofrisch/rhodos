@@ -20,7 +20,7 @@ const cocktails = await getCollection("cocktails");
   </section>
 
   <section id="attraktionen" class="mb-8">
-    <h3 class="mb-2 text-xl font-semibold">Unsere Attraktionen</h3>
+    <h3 class="mb-2 text-3xl font-semibold">Unsere Attraktionen</h3>
     <ul class="list-inside list-disc">
       <li class="mb-1">
         Vielfältige Cocktailauswahl: Unsere Barkeeper zaubern klassische und innovative Cocktails, die jeden Gaumen
@@ -31,37 +31,18 @@ const cocktails = await getCollection("cocktails");
     </ul>
   </section>
 
-  <section id="cocktailkarte">
-    <h3 class="mb-2 text-xl font-semibold">Unsere Cocktailkarte</h3>
-    <ul class="list-inside list-disc">
-      <li>Tequila Sunrise: Tequila, Orangensaft, Grenadine</li>
-      <li>Caipirinha: Cachaça, Limette, Zucker, Eis</li>
-      <li>Planters Punch: Dunkler Rum, Orangensaft, Ananassaft, Grenadine, Limette</li>
-      <li>Mojito: Weißer Rum, Limette, Minze, Zucker, Soda</li>
-      <li>Swimming Pool: Vodka, Rum, Blue Curaçao, Kokoscreme, Ananassaft</li>
-      <li>Sex on the Beach: Vodka, Pfirsichlikör, Orangensaft, Cranberrysaft</li>
-      <li>Piña Colada: Weißer Rum, Kokoscreme, Ananassaft</li>
-      <li>Mai Tai: Weißer und dunkler Rum, Orangenlikör, Mandelsirup, Limettensaft</li>
-      <li>Long Island Ice Tea: Vodka, Tequila, Rum, Triple Sec, Gin, Zitronensaft, Cola</li>
-      <li>White Sky: Vodka, Cointreau, Zitronensaft, Sirup</li>
-      <li>Red Sky: Vodka, Erdbeersirup, Limettensaft, Soda</li>
-      <li>Zombie: Rum, Apricot Brandy, Orangen- und Ananassaft, Grenadine</li>
-      <li>Ipanema: Ginger Ale, Limettensaft, Zucker, Eis (alkoholfrei)</li>
-      <li>Virgin Colada: Kokoscreme, Ananassaft (alkoholfrei)</li>
-      <li>Sex in the Sandbox: Apfelsaft, Pfirsichsaft, Zitronensaft, Grenadine (alkoholfrei)</li>
-      <li>Coconut Kiss: Kokoscreme, Sahne, Ananassaft, Grenadinesirup (alkoholfrei)</li>
-    </ul>
-  </section>
+  <section id="cocktailkarte" class="mb-8">
+    <div class="flex">
+      <h3 class="mb-8 text-3xl font-semibold">Unsere Cocktails - Mit ❤️ zubereitet.</h3>
+    </div>
 
-  <section id="cocktailkarte">
-    <h3 class="mb-2 text-xl font-semibold">Unsere Cocktailkarte</h3>
-    <ul>
+    <div class="grid grid-cols-4 gap-8">
       {cocktails.map(cocktail => <Cocktail {cocktail} />)}
-    </ul>
+    </div>
   </section>
 
   <section id="oeffnungszeiten" class="mb-8">
-    <h3 class="mb-2 text-xl font-semibold">Öffnungszeiten</h3>
+    <h3 class="mb-2 text-3xl font-semibold">Öffnungszeiten</h3>
     <p class="mb-1">Sonntag bis Donnerstag: 18:00 - 00:00 Uhr</p>
     <p class="mb-1">Freitag und Samstag: 18:00 - 03:00 Uhr</p>
     <p class="mb-1">Montag: geschlossen</p>
