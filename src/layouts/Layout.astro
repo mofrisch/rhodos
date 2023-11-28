@@ -5,14 +5,11 @@ import "@styles/base.css";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 
-const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
-
 export interface Props {
   title?: string;
-  current: string;
 }
 
-const { title = SITE.title, current } = Astro.props;
+const { title = SITE.title } = Astro.props;
 ---
 
 <!doctype html>
@@ -34,7 +31,7 @@ const { title = SITE.title, current } = Astro.props;
   </head>
 
   <body>
-    <Header {current} />
+    <Header />
     <main>
       <slot />
     </main>

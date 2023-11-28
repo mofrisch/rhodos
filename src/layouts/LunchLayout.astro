@@ -12,7 +12,7 @@ export interface Props {
 const { frontmatter } = Astro.props;
 ---
 
-<Layout title={`${frontmatter.title} | ${SITE.title}`} current={frontmatter.current}>
+<Layout title={`${frontmatter.title} | ${SITE.title}`}>
   <main id="main-content">
     <section id="about">
       <h1 class="py-4 text-2xl tracking-wider sm:text-3xl">

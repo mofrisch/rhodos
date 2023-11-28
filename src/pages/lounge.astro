@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import loungeOpen from "img/lounge-open-1280.jpg";
+import Layout from "../layouts/Layout.astro";
+import SingleMenu from "@components/SingleMenu.astro";
+---
+
+<Layout>
+  <section id="willkommen" class="mb-8">
+    <div class="my-8 flex items-center justify-center">
+      <h1 class="text-5xl font-bold">Rhodos Lounge</h1>
+    </div>
+    <p class="pb-4 text-lg">
+      Die Kellerbar im Restaurant Rhodos, liebevoll geführt von Andreas, dem Sohn von Giulia und Taki, bietet ein
+      einzigartiges Erlebnis für Liebhaber von Cocktails und entspannter Atmosphäre. Unsere sorgfältig kuratierte
+      Cocktailkarte, die Billardtische, Dart und das gemütliche Ambiente machen die Kellerbar zu einem beliebten
+      Treffpunkt.
+    </p>
+    <Image src={loungeOpen} alt="Gemütliche Kellerbar im Restaurant Rhodos" class="mb-8 rounded-lg shadow-lg" />
+  </section>
+
+  <section id="attraktionen" class="mb-8">
+    <h3 class="mb-2 text-xl font-semibold">Unsere Attraktionen</h3>
+    <ul class="list-inside list-disc">
+      <li class="mb-1">
+        Vielfältige Cocktailauswahl: Unsere Barkeeper zaubern klassische und innovative Cocktails, die jeden Gaumen
+        erfreuen.
+      </li>
+      <li class="mb-1">Billard und Dart: Fordern Sie Ihre Freunde zu einer Runde Billard oder Dart heraus.</li>
+      <li class="mb-1">Entspanntes Ambiente: Mit bequemen Sitzgelegenheiten und einer warmen Beleuchtung.</li>
+    </ul>
+  </section>
+
+  <section id="cocktailkarte">
+    <h3 class="mb-2 text-xl font-semibold">Unsere Cocktailkarte</h3>
+    <ul class="list-inside list-disc">
+      <li>Tequila Sunrise: Tequila, Orangensaft, Grenadine</li>
+      <li>Caipirinha: Cachaça, Limette, Zucker, Eis</li>
+      <li>Planters Punch: Dunkler Rum, Orangensaft, Ananassaft, Grenadine, Limette</li>
+      <li>Mojito: Weißer Rum, Limette, Minze, Zucker, Soda</li>
+      <li>Swimming Pool: Vodka, Rum, Blue Curaçao, Kokoscreme, Ananassaft</li>
+      <li>Sex on the Beach: Vodka, Pfirsichlikör, Orangensaft, Cranberrysaft</li>
+      <li>Piña Colada: Weißer Rum, Kokoscreme, Ananassaft</li>
+      <li>Mai Tai: Weißer und dunkler Rum, Orangenlikör, Mandelsirup, Limettensaft</li>
+      <li>Long Island Ice Tea: Vodka, Tequila, Rum, Triple Sec, Gin, Zitronensaft, Cola</li>
+      <li>White Sky: Vodka, Cointreau, Zitronensaft, Sirup</li>
+      <li>Red Sky: Vodka, Erdbeersirup, Limettensaft, Soda</li>
+      <li>Zombie: Rum, Apricot Brandy, Orangen- und Ananassaft, Grenadine</li>
+      <li>Ipanema: Ginger Ale, Limettensaft, Zucker, Eis (alkoholfrei)</li>
+      <li>Virgin Colada: Kokoscreme, Ananassaft (alkoholfrei)</li>
+      <li>Sex in the Sandbox: Apfelsaft, Pfirsichsaft, Zitronensaft, Grenadine (alkoholfrei)</li>
+      <li>Coconut Kiss: Kokoscreme, Sahne, Ananassaft, Grenadinesirup (alkoholfrei)</li>
+    </ul>
+  </section>
+
+  <SingleMenu title="Cocktails" coll="cocktails" />
+
+  <section id="oeffnungszeiten" class="mb-8">
+    <h3 class="mb-2 text-xl font-semibold">Öffnungszeiten</h3>
+    <p class="mb-1">Sonntag bis Donnerstag: 18:00 - 00:00 Uhr</p>
+    <p class="mb-1">Freitag und Samstag: 18:00 - 03:00 Uhr</p>
+    <p class="mb-1">Montag: geschlossen</p>
+  </section>
+</Layout>

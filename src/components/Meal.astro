@@ -13,7 +13,7 @@ export interface Props {
   };
 }
 
-const { meal, coll } = Astro.props;
+const { meal } = Astro.props;
 const entry = await getEntry("meals", meal.slug);
 if (!entry) throw new Error(`Could not find entry for ${meal.slug}`);
 const { Content } = await entry.render();

@@ -10,8 +10,10 @@ const lunch = defineCollection({
 });
 
 const meals = lunch;
+const cocktails = lunch;
 
 export const collections = {
   lunch,
   meals,
+  cocktails,
 };

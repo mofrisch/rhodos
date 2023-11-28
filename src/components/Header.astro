@@ -1,15 +1,84 @@
 ---
-import NavBar from "./NavBar.astro";
-
-export interface Props {
-  current: string;
-}
-const current = Astro.props.current;
+import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems } from "astro-navbar";
 ---
 
-<NavBar {current} />
+<header class="items-center gap-5 bg-gradient-to-r from-blue-50 to-blue-600 p-3 px-4 sm:flex">
+  <Astronav>
+    <div class="flex w-full items-center justify-between">
+      <div class="items-center pt-2 sm:pt-0">
+        <a class="header__logo m-2 flex items-center space-x-2 sm:justify-start" href="/">
+          <img src="/img/Flag_of_Greece.svg" alt="Griechische Fahne" width="48" height="32" />
+          <p>Restaurant Rhodos</p></a
+        >
+      </div>
 
-<!-- Titlebar -->
+      <div class="block sm:hidden">
+        <MenuIcon class="h-8 w-8 text-blue-800" />
+      </div>
+    </div>
+    <MenuItems class="hidden sm:flex sm:text-blue-50">
+      <ul class="flex flex-col sm:flex-row sm:gap-5">
+        <li><a href="/">Home</a></li>
+        <li><a href="/lunch">Mittagskarte</a></li>
+
+        <li>
+          <Dropdown class="group">
+            <button class="flex items-center">
+              <span> Speisekarte</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="3"
+                stroke="currentColor"
+                class="mt-0.5 h-3 w-3 group-open:rotate-180"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+              </svg>
+            </button>
+            <DropdownItems class="relative w-full">
+              <div class="absolute top-0 bg-gradient-to-b from-blue-500 to-blue-50 px-4 py-2 text-blue-900">
+                <ul>
+                  <li><a href="/soups">Suppen</a></li>
+                  <li><a href="/starters">Vorspeisen</a></li>
+                  <li><a href="/fish">Fisch&nbsp;Spezialitäten</a></li>
+                  <li><a href="/cheese">Käse&nbsp;Spezialitäten</a></li>
+                  <li><a href="/salads">Salate</a></li>
+                  <li><a href="/gyros">Drehspieß&nbsp;Spezialitäten</a></li>
+                  <li><a href="/grill">Grill&nbsp;Spezialitäten</a></li>
+                  <li><a href="/rumpsteak">Argentinisches&nbsp;Rumpsteak</a></li>
+                  <li><a href="/grill_plates">Grillplatten</a></li>
+                  <li><a href="/oven">Aus&nbsp;dem&nbsp;Steinofen</a></li>
+                  <li><a href="/veggie">Vegetarische&nbsp;Gerichte</a></li>
+                  <li><a href="/fish_plates">Fischgerichte</a></li>
+                  <li><a href="/schnitzel">Schnitzel</a></li>
+                  <li><a href="/kids">Für&nbsp;unsere&nbsp;kleinen&nbsp;Gäste</a></li>
+                  <li><a href="/extra">Extra&nbsp;Beilagen</a></li>
+                  <li><a href="/desserts">Desserts</a></li>
+                  <li><a href="/ice">Eis</a></li>
+                </ul>
+              </div>
+            </DropdownItems>
+          </Dropdown>
+        </li>
+        <li><a href="/drinks">Getränke</a></li>
+        <li><a href="/wine">Weine</a></li>
+        <li><a href="lounge">Lounge</a></li>
+        <li><a href="/contact">Kontakt</a></li>
+        <li><a href="/about">Über&nbsp;uns</a></li>
+      </ul>
+    </MenuItems>
+  </Astronav>
+</header>
 <div class="mx-auto flex items-center justify-center">
   <img src="/img/titlebar-2048.avif" alt="Willkommen im Restaurant Rhodos" width="1280" />
 </div>
+
+<script>
+  console.log(document.URL);
+  document.querySelectorAll("a").forEach(a => {
+    if (a.href === document.URL) {
+      a.classList.add("underline");
+    }
+  });
+</script>
