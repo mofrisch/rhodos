@@ -10,9 +10,12 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   site: SITE.website,
   integrations: [sitemap(), tailwind()],
-  output: "hybrid",
+  output: "static",
   build: {
     format: "file",
   },
-  adapter: cloudflare(),
+  optimize: {
+    css: true,
+    js: true,
+  },
 });
