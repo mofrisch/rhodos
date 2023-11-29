@@ -14,5 +14,5 @@ export default defineConfig({
   build: {
     format: "file",
   },
-  adapter: vercel(),
+  adapter: cloudflare(),
 });
