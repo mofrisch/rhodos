@@ -21,8 +21,8 @@ const { Content } = await entry.render();
   <div class="flex flex-row items-center justify-center">
     <Picture src={entry.data.pic} alt={entry.data.title} />
   </div>
-  <div class="my-4 flex justify-center text-lg">
+  <div class="my-4 flex justify-center text-sm sm:text-lg">
     <Content />
   </div>
-  <p class="flex justify-center py-2 text-xl">{euro.format(entry.data.price)}</p>
+  <p class="flex justify-center py-2 sm:text-xl">{euro.format(entry.data.price)}</p>
 </Layout>

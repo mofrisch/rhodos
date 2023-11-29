@@ -42,23 +42,21 @@ const { Content } = await entry!.render();
   </div>
 </li>
 -->
-<a href=`/cocktails/${cocktail.slug}/`>
-  <div class="flex max-w-sm flex-col overflow-hidden rounded shadow-lg">
-    <div class="flex-1 items-center justify-center">
-      <Picture src={cocktail.data.pic} formats={["avif", "webp"]} alt={cocktail.data.title} />
-    </div>
+<a href=`/cocktails/${cocktail.slug}` class="flex max-w-sm flex-col overflow-hidden rounded shadow-lg">
+  <div class="w-full hidden sm:flex">
+    <Picture src={cocktail.data.pic} formats={["avif", "webp"]} alt={cocktail.data.title} />
+  </div>
 
-    <div class="flex-1 px-6 py-4">
-      <div class="mb-2 text-xl font-bold">{cocktail.data.title}</div>
-      <p class="my-auto text-base text-gray-700">
-        <Content />
-      </p>
-    </div>
+  <div class="flex-1 px-6 py-4">
+    <div class="mb-2 text-xl font-bold">{cocktail.data.title}</div>
+    <p class="text-base text-gray-700">
+      <Content />
+    </p>
+  </div>
 
-    <div class="flex-end px-6 py-2">
-      <span class="mb-2 ml-32 inline-block rounded-full bg-blue-200 px-10 py-1 font-semibold text-blue-700"
-        >{euro.format(cocktail.data.price)}</span
-      >
-    </div>
+  <div class="flex-end px-6 py-2">
+    <span class="mb-2 inline-block rounded-full bg-blue-200 px-10 py-1 font-semibold text-blue-700"
+      >{euro.format(cocktail.data.price)}</span
+    >
   </div>
 </a>

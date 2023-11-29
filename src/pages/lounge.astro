@@ -36,7 +36,7 @@ const cocktails = await getCollection("cocktails");
       <h3 class="mb-8 text-3xl font-semibold">Unsere Cocktails - Mit ❤️ zubereitet.</h3>
     </div>
 
-    <div class="grid grid-cols-4 gap-8">
+    <div class="grid grid-cols sm:grid-cols-4 gap-8">
       {cocktails.map(cocktail => <Cocktail {cocktail} />)}
     </div>
   </section>

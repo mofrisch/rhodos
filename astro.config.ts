@@ -5,7 +5,7 @@ import { SITE } from "./src/config";
 
 export default defineConfig({
   site: SITE.website,
-  integrations: [sitemap(), tailwind()],
+  integrations: [tailwind(), sitemap()],
   output: "static",
   build: {
     format: "file",

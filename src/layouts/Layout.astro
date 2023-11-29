@@ -39,7 +39,7 @@ const { title = SITE.title, titleImage } = Astro.props;
         <Header {titleImage} />
       </div>
       <div class="mb-auto">
-        <main transition:animate={fade({ duration: ".5s" })}>
+        <main>
           <slot />
         </main>
       </div>
