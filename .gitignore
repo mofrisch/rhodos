@@ -2,6 +2,7 @@
 dist/
 .output/
 .wrangler
+.vercel
 
 # dependencies
 node_modules/

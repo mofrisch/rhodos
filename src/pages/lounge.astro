@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+import Cocktail from "@components/Cocktail.astro";
+const cocktails = await getCollection("cocktails");
+---
+
+<Layout titleImage="img/lounge-open-2048.jpg">
+  <section id="willkommen" class="mb-8">
+    <div class="my-8 flex items-center justify-center">
+      <h1 class="text-5xl font-bold">Rhodos Lounge</h1>
+    </div>
+    <p class="pb-4 text-lg">
+      Die Kellerbar im Restaurant Rhodos, liebevoll geführt von Andreas, dem Sohn von Giulia und Taki, bietet ein
+      einzigartiges Erlebnis für Liebhaber von Cocktails und entspannter Atmosphäre. Unsere sorgfältig kuratierte
+      Cocktailkarte, die Billardtische, Dart und das gemütliche Ambiente machen die Kellerbar zu einem beliebten
+      Treffpunkt.
+    </p>
+  </section>
+
+  <section id="attraktionen" class="mb-8">
+    <h3 class="mb-2 text-3xl font-semibold">Unsere Attraktionen</h3>
+    <ul class="list-inside list-disc">
+      <li class="mb-1">
+        Vielfältige Cocktailauswahl: Unsere Barkeeper zaubern klassische und innovative Cocktails, die jeden Gaumen
+        erfreuen.
+      </li>
+      <li class="mb-1">Billard und Dart: Fordern Sie Ihre Freunde zu einer Runde Billard oder Dart heraus.</li>
+      <li class="mb-1">Entspanntes Ambiente: Mit bequemen Sitzgelegenheiten und einer warmen Beleuchtung.</li>
+    </ul>
+  </section>
+
+  <section id="cocktailkarte" class="mb-8">
+    <div class="flex">
+      <h3 class="mb-8 text-3xl font-semibold">Unsere Cocktails - Mit ❤️ zubereitet.</h3>
+    </div>
+
+    <div class="grid grid-cols sm:grid-cols-4 gap-8">
+      {cocktails.map(cocktail => <Cocktail {cocktail} />)}
+    </div>
+  </section>
+
+  <section id="oeffnungszeiten" class="mb-8">
+    <h3 class="mb-2 text-3xl font-semibold">Öffnungszeiten</h3>
+    <p class="mb-1">Sonntag bis Donnerstag: 18:00 - 00:00 Uhr</p>
+    <p class="mb-1">Freitag und Samstag: 18:00 - 03:00 Uhr</p>
+    <p class="mb-1">Montag: geschlossen</p>
+  </section>
+</Layout>
