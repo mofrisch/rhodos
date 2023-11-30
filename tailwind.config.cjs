@@ -5,12 +5,6 @@ module.exports = {
     screens: {
       sm: "800px",
     },
-
-    extend: {
-      fontFamily: {
-        mono: ["Roboto Flex"],
-      },
-    },
   },
   plugins: [require("@tailwindcss/typography")],
 };
