@@ -1,0 +1,37 @@
+---
+import SingleMenu from "@components/SingleMenu.astro";
+export function getStaticPaths() {
+  return [
+    {
+      params: {
+        menu: "cheese",
+      },
+      props: {
+        title: "Käse-Spezialitäten",
+      },
+    },
+    {
+      params: {
+        menu: "soups",
+      },
+      props: {
+        title: "Fleisch-Spezialitäten",
+      },
+    },
+    {
+      params: {
+        menu: "veggie",
+      },
+      props: {
+        title: "Vegetarische Spezialitäten",
+      },
+    },
+  ];
+}
+
+const { title } = Astro.props;
+const { menu } = Astro.params;
+console.log(Astro.props);
+---
+
+<SingleMenu {title} collection={menu} />

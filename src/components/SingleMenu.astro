@@ -5,16 +5,16 @@ import { getCollection } from "astro:content";
 
 export interface Props {
   title: string;
-  coll: string;
+  collection: string;
 }
 
-const { title, coll } = Astro.props;
+const { title, collection } = Astro.props;
 
 const entries = await getCollection("meals");
-const filtered = entries.filter(meal => meal.slug.split("/")[0] === coll);
-const current = "/" + coll;
+const filtered = entries.filter(meal => meal.slug.split("/")[0] === collection);
+const current = "/" + collection;
 ---
 
 <SingleMenuLayout {title} {current}>
-  {filtered.map(meal => <Meal meal={meal} coll={coll} />)}
+  {filtered.map(meal => <Meal {meal} {collection} />)}
 </SingleMenuLayout>
