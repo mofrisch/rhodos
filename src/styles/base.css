@@ -8,15 +8,15 @@
   }
 
   body {
-    @apply mx-auto w-full  max-w-7xl bg-blue-50 text-blue-900;
+    @apply m-auto w-full  max-w-7xl bg-blue-50 text-blue-900;
   }
 
   section {
-    @apply p-2;
+    @apply mx-2;
   }
 
   h1 {
-    @apply mb-2 text-4xl font-medium;
+    @apply my-2 text-4xl font-medium;
   }
   h2 {
     @apply mb-2 text-3xl font-medium;
@@ -25,6 +25,6 @@
     @apply mb-2 text-2xl;
   }
   p {
-    @apply mb-2 text-lg;
+    @apply mb-1;
   }
 }
