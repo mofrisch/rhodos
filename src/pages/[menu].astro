@@ -4,6 +4,30 @@ export function getStaticPaths() {
   return [
     {
       params: {
+        menu: "soups",
+      },
+      props: {
+        title: "Suppen",
+      },
+    },
+    {
+      params: {
+        menu: "starters",
+      },
+      props: {
+        title: "Vorspeisen",
+      },
+    },
+    {
+      params: {
+        menu: "fish",
+      },
+      props: {
+        title: "Fisch-Spezialitäten",
+      },
+    },
+    {
+      params: {
         menu: "cheese",
       },
       props: {
@@ -12,10 +36,50 @@ export function getStaticPaths() {
     },
     {
       params: {
-        menu: "soups",
+        menu: "salads",
       },
       props: {
-        title: "Fleisch-Spezialitäten",
+        title: "Salate",
+      },
+    },
+    {
+      params: {
+        menu: "gyros",
+      },
+      props: {
+        title: "Drehspieß-Spezialitäten",
+      },
+    },
+    {
+      params: {
+        menu: "grill",
+      },
+      props: {
+        title: "Grill-Spezialitäten",
+      },
+    },
+    {
+      params: {
+        menu: "rumpsteak",
+      },
+      props: {
+        title: "Argentinisches Rumpsteak",
+      },
+    },
+    {
+      params: {
+        menu: "grill_plates",
+      },
+      props: {
+        title: "Grillplatten",
+      },
+    },
+    {
+      params: {
+        menu: "oven",
+      },
+      props: {
+        title: "Aus dem Steinofen",
       },
     },
     {
@@ -23,7 +87,55 @@ export function getStaticPaths() {
         menu: "veggie",
       },
       props: {
-        title: "Vegetarische Spezialitäten",
+        title: "Vegetarische Gerichte",
+      },
+    },
+    {
+      params: {
+        menu: "fish_plates",
+      },
+      props: {
+        title: "Fischgerichte",
+      },
+    },
+    {
+      params: {
+        menu: "schnitzel",
+      },
+      props: {
+        title: "Schnitzel",
+      },
+    },
+    {
+      params: {
+        menu: "kids",
+      },
+      props: {
+        title: "Für unsere kleinen Gäste",
+      },
+    },
+    {
+      params: {
+        menu: "extra",
+      },
+      props: {
+        title: "Extra Beilagen",
+      },
+    },
+    {
+      params: {
+        menu: "desserts",
+      },
+      props: {
+        title: "Desserts",
+      },
+    },
+    {
+      params: {
+        menu: "ice",
+      },
+      props: {
+        title: "Eis",
       },
     },
   ];
@@ -31,7 +143,6 @@ export function getStaticPaths() {
 
 const { title } = Astro.props;
 const { menu } = Astro.params;
-console.log(Astro.props);
 ---
 
 <SingleMenu {title} collection={menu} />
