@@ -17,13 +17,20 @@ const { Content } = await entry.render();
 ---
 
 <Layout titleImage="img/lounge-open">
-  <h1 class="my-8 flex justify-center text-4xl">{entry.data.title}</h1>
-
-  <div class="my-4 flex justify-center text-sm sm:text-lg">
-    <Content />
-  </div>
-  <p class="flex justify-center py-2 sm:text-xl">{euro.format(entry.data.price)}</p>
-  <div class="flex flex-row items-center justify-center">
-    <Picture src={entry.data.pic} alt={entry.data.title} />
+  <h1 class="mx-2 my-4 text-4xl">{entry.data.title}</h1>
+  <div class="my-4 flex w-full flex-row">
+    <div class="mr-4 flex flex-row items-end rounded-md">
+      <Picture src={entry.data.pic} alt={entry.data.title} width="800" class="rounded-xl" />
+    </div>
+    <div class="flex items-center">
+      <div class="mx-4 flex text-sm sm:text-lg">
+        <Content />
+      </div>
+      <div class="items-end">
+        <span class="mb-2 inline-block rounded-full bg-blue-200 px-10 py-1 font-semibold text-blue-700"
+          >{euro.format(entry.data.price)}</span
+        >
+      </div>
+    </div>
   </div>
 </Layout>
