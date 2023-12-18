@@ -9,5 +9,5 @@ const current = "/lunch";
 ---
 
 <SingleMenu {title} {current}>
-  {meals.map(meal => <Lunch meal={meal} coll={coll} />)}
+  {meals.map(meal => <Lunch {meal} {coll} />)}
 </SingleMenu>
