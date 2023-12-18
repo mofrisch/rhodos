@@ -33,17 +33,18 @@ const { title = SITE.title, titleImage } = Astro.props;
   </head>
 
   <body>
-    <div class="flex h-screen flex-col justify-between">
-      <div class="h-100">
-        <Header {titleImage} />
-      </div>
-      <div class="mb-auto">
-        <main>
-          <slot />
-        </main>
-      </div>
-      <div class="mb-h-50">
-        <Footer />
+    <div class="flex flex-col justify-between">
+      <Header {titleImage} />
+
+      <div class="relative">
+        <div class="mb-auto">
+          <main>
+            <slot />
+          </main>
+        </div>
+        <div class="">
+          <Footer />
+        </div>
       </div>
     </div>
     <script>

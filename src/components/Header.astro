@@ -1,5 +1,5 @@
 ---
-import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems } from "astro-navbar";
+import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems, StickyHeader } from "astro-navbar";
 import { Picture } from "astro:assets";
 import myImage from "../img/titlebar-2048.jpg";
 import loungeImage from "../img/lounge-open-2048.jpg";
@@ -11,7 +11,9 @@ const { titleImage } = Astro.props;
 const image = titleImage ? loungeImage : myImage;
 ---
 
-<header class="items-center gap-5 bg-gradient-to-r from-blue-50 to-blue-600 px-6 py-2 sm:flex">
+<StickyHeader
+  class="sticky top-0 z-20 items-center gap-5 border-b bg-gradient-to-r from-blue-50 to-blue-600 px-6 py-2 transition-all sm:flex"
+>
   <Astronav>
     <div class="flex w-full items-center justify-between">
       <div class="items-center pt-2 sm:pt-0">
@@ -77,7 +79,7 @@ const image = titleImage ? loungeImage : myImage;
       </ul>
     </MenuItems>
   </Astronav>
-</header>
+</StickyHeader>
 <div class="mx-auto flex items-center justify-center">
   <Picture src={image} formats={["avif", "webp"]} alt="Willkommen im Restaurant Rhodos" loading={"eager"} />
 </div>
