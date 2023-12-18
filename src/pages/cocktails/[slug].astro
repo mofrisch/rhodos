@@ -22,8 +22,8 @@ const { Content } = await entry.render();
     <div class="mr-4 flex flex-row items-end rounded-md">
       <Picture src={entry.data.pic} alt={entry.data.title} width="800" class="rounded-xl" />
     </div>
-    <div class="flex items-center">
-      <div class="mx-4 flex text-sm sm:text-lg">
+    <div class="flex-col items-center sm:flex">
+      <div class="m-4 flex text-sm sm:text-lg">
         <Content />
       </div>
       <div class="items-end">
