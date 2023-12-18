@@ -1,0 +1,148 @@
+---
+import SingleMenu from "@components/SingleMenu.astro";
+export function getStaticPaths() {
+  return [
+    {
+      params: {
+        menu: "soups",
+      },
+      props: {
+        title: "Suppen",
+      },
+    },
+    {
+      params: {
+        menu: "starters",
+      },
+      props: {
+        title: "Vorspeisen",
+      },
+    },
+    {
+      params: {
+        menu: "fish",
+      },
+      props: {
+        title: "Fisch-Spezialitäten",
+      },
+    },
+    {
+      params: {
+        menu: "cheese",
+      },
+      props: {
+        title: "Käse-Spezialitäten",
+      },
+    },
+    {
+      params: {
+        menu: "salads",
+      },
+      props: {
+        title: "Salate",
+      },
+    },
+    {
+      params: {
+        menu: "gyros",
+      },
+      props: {
+        title: "Drehspieß-Spezialitäten",
+      },
+    },
+    {
+      params: {
+        menu: "grill",
+      },
+      props: {
+        title: "Grill-Spezialitäten",
+      },
+    },
+    {
+      params: {
+        menu: "rumpsteak",
+      },
+      props: {
+        title: "Argentinisches Rumpsteak",
+      },
+    },
+    {
+      params: {
+        menu: "grill_plates",
+      },
+      props: {
+        title: "Grillplatten",
+      },
+    },
+    {
+      params: {
+        menu: "oven",
+      },
+      props: {
+        title: "Aus dem Steinofen",
+      },
+    },
+    {
+      params: {
+        menu: "veggie",
+      },
+      props: {
+        title: "Vegetarische Gerichte",
+      },
+    },
+    {
+      params: {
+        menu: "fish_plates",
+      },
+      props: {
+        title: "Fischgerichte",
+      },
+    },
+    {
+      params: {
+        menu: "schnitzel",
+      },
+      props: {
+        title: "Schnitzel",
+      },
+    },
+    {
+      params: {
+        menu: "kids",
+      },
+      props: {
+        title: "Für unsere kleinen Gäste",
+      },
+    },
+    {
+      params: {
+        menu: "extra",
+      },
+      props: {
+        title: "Extra Beilagen",
+      },
+    },
+    {
+      params: {
+        menu: "desserts",
+      },
+      props: {
+        title: "Desserts",
+      },
+    },
+    {
+      params: {
+        menu: "ice",
+      },
+      props: {
+        title: "Eis",
+      },
+    },
+  ];
+}
+
+const { title } = Astro.props;
+const { menu } = Astro.params;
+---
+
+<SingleMenu {title} collection={menu} />
