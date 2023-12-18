@@ -3,7 +3,11 @@ import Layout from "../layouts/Layout.astro";
 
 import { getCollection } from "astro:content";
 import Cocktail from "@components/Cocktail.astro";
+import Carousel from "@components/Carousel.astro";
+import CarouselLayout from "@layouts/CarouselLayout.astro";
+import { Picture } from "astro:assets";
 const cocktails = await getCollection("cocktails");
+const pictures = await getCollection("lounge");
 ---
 
 <Layout titleImage="img/lounge-open-2048.jpg">
@@ -18,6 +22,10 @@ const cocktails = await getCollection("cocktails");
       Treffpunkt.
     </p>
   </section>
+
+  <CarouselLayout>
+    {pictures.map(picture => <Carousel {picture} />)}
+  </CarouselLayout>
 
   <section id="attraktionen" class="mb-8">
     <h3 class="mb-2 text-3xl font-semibold">Unsere Attraktionen</h3>
@@ -36,7 +44,7 @@ const cocktails = await getCollection("cocktails");
       <h3 class="mb-8 text-3xl font-semibold">Unsere Cocktails - Mit ❤️ zubereitet.</h3>
     </div>
 
-    <div class="grid grid-cols sm:grid-cols-4 gap-8">
+    <div class="grid-cols grid gap-8 sm:grid-cols-4">
       {cocktails.map(cocktail => <Cocktail {cocktail} />)}
     </div>
   </section>

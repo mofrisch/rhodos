@@ -1,0 +1,24 @@
+---
+import { Picture } from "astro:assets";
+
+import { getEntry } from "astro:content";
+
+export interface Props {
+  picture: {
+    data: {
+      title: string;
+      pic: ImageMetadata;
+      active?: boolean;
+    };
+    slug: string;
+  };
+}
+
+const { picture } = Astro.props;
+const entry = await getEntry("lounge", picture.slug);
+const className = picture.data.active ? "carousel-item active" : "carousel-item";
+---
+
+<div class={className}>
+  <Picture src={picture.data.pic} formats={["avif", "webp"]} alt={picture.data.title} />
+</div>

@@ -1,0 +1,30 @@
+---
+import { Picture } from "astro:assets";
+import picture1 from "../img/cocktail-01.jpg";
+import picture2 from "../img/cocktail-02.jpg";
+import picture3 from "../img/cocktail-03.jpg";
+
+const collection = Astro.props;
+---
+
+<div id="carouselExample" class="carousel slide mx-auto w-4/5">
+  <div class="carousel-inner mx-auto">
+    <div class="carousel-item active">
+      <Picture src={picture1} alt="Bild 1" class="d-block w-100" />
+    </div>
+    <div class="carousel-item">
+      <Picture src={picture2} alt="Bild 2" class="d-block w-100" />
+    </div>
+    <div class="carousel-item">
+      <Picture src={picture3} alt="Bild 3" class="d-block w-100" />
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

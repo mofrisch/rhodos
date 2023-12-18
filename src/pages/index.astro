@@ -1,5 +1,9 @@
 ---
+import Carousel from "@components/Carousel.astro";
+import CarouselLayout from "@layouts/CarouselLayout.astro";
 import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+const pictures = await getCollection("home");
 ---
 
 <Layout>
@@ -19,11 +23,12 @@ import Layout from "@layouts/Layout.astro";
     </div>
   </section>
 
+  <CarouselLayout>
+    {pictures.map(picture => <Carousel {picture} />)}
+  </CarouselLayout>
+
   <section>
     <div class="mb-4 flex flex-col items-center sm:flex-row">
-      <div class="mb-4 w-64 justify-center rounded-lg shadow-xl">
-        <img src="/img/statue-512.avif" width="256" height="256" alt="Statue" />
-      </div>
       <div class="sm:ml-10">
         <h2>Entdecken Sie den Geschmack Griechenlands</h2>
         <p class="text-lg">
