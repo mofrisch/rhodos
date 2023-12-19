@@ -3,6 +3,7 @@ import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems, StickyHeader } 
 import { Picture } from "astro:assets";
 import myImage from "../img/titlebar-2048.jpg";
 import loungeImage from "../img/lounge-open-2048.jpg";
+
 export interface Props {
   titleImage?: string;
 }
@@ -12,7 +13,7 @@ const image = titleImage ? loungeImage : myImage;
 ---
 
 <StickyHeader
-  class="sticky top-0 z-20 items-center gap-5 border-b bg-gradient-to-r from-blue-50 to-blue-600 px-6 py-2 transition-all sm:flex"
+  class="sticky top-0 z-20 items-center gap-5 bg-gradient-to-r from-blue-50 to-blue-600 px-6 py-2 transition-all sm:flex"
 >
   <Astronav>
     <div class="flex w-full items-center justify-between">
@@ -80,9 +81,15 @@ const image = titleImage ? loungeImage : myImage;
     </MenuItems>
   </Astronav>
 </StickyHeader>
-<div class="mx-auto flex items-center justify-center">
-  <Picture src={image} formats={["avif", "webp"]} alt="Willkommen im Restaurant Rhodos" loading={"eager"} />
-</div>
+{
+  titleImage ? (
+    ""
+  ) : (
+    <div class="mx-auto flex items-center justify-center">
+      <Picture src={image} formats={["avif", "webp"]} alt="Willkommen im Restaurant Rhodos" loading={"eager"} />
+    </div>
+  )
+}
 
 <script>
   console.log(document.URL);

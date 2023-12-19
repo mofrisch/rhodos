@@ -1,7 +1,6 @@
 ---
 import { Picture } from "astro:assets";
-
-import { getEntry } from "astro:content";
+import ImageMetadata from "astro";
 
 export interface Props {
   picture: {
@@ -15,10 +14,10 @@ export interface Props {
 }
 
 const { picture } = Astro.props;
-const entry = await getEntry("lounge", picture.slug);
-const className = picture.data.active ? "carousel-item active" : "carousel-item";
 ---
 
-<div class={className}>
-  <Picture src={picture.data.pic} formats={["avif", "webp"]} alt={picture.data.title} />
+<div class="absolute duration-1000 ease-in-out" data-carousel-item>
+  <div class="active absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+    <Picture src={picture.data.pic} formats={["avif", "webp"]} alt={picture.data.title} />
+  </div>
 </div>

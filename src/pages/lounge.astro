@@ -5,12 +5,24 @@ import { getCollection } from "astro:content";
 import Cocktail from "@components/Cocktail.astro";
 import Carousel from "@components/Carousel.astro";
 import CarouselLayout from "@layouts/CarouselLayout.astro";
-import { Picture } from "astro:assets";
+import Sliders from "@components/Sliders.astro";
 const cocktails = await getCollection("cocktails");
 const pictures = await getCollection("lounge");
 ---
 
-<Layout titleImage="img/lounge-open-2048.jpg">
+<Layout titleImage="none">
+  <CarouselLayout mode="slide">
+    <!-- Carousel wrapper -->
+    <div class="md:h-96 relative h-96 overflow-hidden rounded-b-lg">
+      {pictures.map(picture => <Carousel {picture} />)}
+    </div>
+
+    <!-- Slider indicators -->
+    <div class="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse">
+      <Sliders num={pictures.length} />
+    </div>
+  </CarouselLayout>
+
   <section id="willkommen" class="mb-8">
     <div class="my-8 flex items-center justify-center">
       <h1 class="text-5xl font-bold">Rhodos Lounge</h1>
@@ -22,10 +34,6 @@ const pictures = await getCollection("lounge");
       Treffpunkt.
     </p>
   </section>
-
-  <CarouselLayout>
-    {pictures.map(picture => <Carousel {picture} />)}
-  </CarouselLayout>
 
   <section id="attraktionen" class="mb-8">
     <h3 class="mb-2 text-3xl font-semibold">Unsere Attraktionen</h3>

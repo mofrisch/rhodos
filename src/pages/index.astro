@@ -1,9 +1,5 @@
 ---
-import Carousel from "@components/Carousel.astro";
-import CarouselLayout from "@layouts/CarouselLayout.astro";
 import Layout from "@layouts/Layout.astro";
-import { getCollection } from "astro:content";
-const pictures = await getCollection("home");
 ---
 
 <Layout>
@@ -22,10 +18,6 @@ const pictures = await getCollection("home");
       </p>
     </div>
   </section>
-
-  <CarouselLayout>
-    {pictures.map(picture => <Carousel {picture} />)}
-  </CarouselLayout>
 
   <section>
     <div class="mb-4 flex flex-col items-center sm:flex-row">
