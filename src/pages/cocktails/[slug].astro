@@ -16,9 +16,9 @@ const { Content } = await entry.render();
 ---
 
 <Layout titleImage="img/lounge-open">
-  <h1 class="mx-2 my-4 flex justify-center text-xl sm:text-4xl">{entry.data.title}</h1>
-  <div class="m-auto my-4 flex w-2/3 flex-col shadow-lg sm:w-full">
-    <div class="mr-4 flex items-end justify-center rounded-lg">
+  <h1 class="mx-2 flex justify-center text-xl sm:my-4 sm:text-4xl">{entry.data.title}</h1>
+  <div class="m-auto flex w-full flex-col sm:my-4">
+    <div class="m-2 flex items-end justify-center rounded-lg">
       <Picture src={entry.data.pic} alt={entry.data.title} width="800" class="rounded-xl" />
     </div>
     <div class="flex flex-col items-center">
@@ -26,7 +26,7 @@ const { Content } = await entry.render();
         <Content />
       </div>
       <div class="items-end">
-        <span class="mb-2 inline-block rounded-full bg-blue-200 px-10 py-1 font-semibold text-blue-700"
+        <span class="mb-4 inline-block rounded-full bg-blue-200 px-10 py-1 font-semibold text-blue-700"
           >{euro.format(entry.data.price)}</span
         >
       </div>

@@ -20,8 +20,8 @@ const entry = await getEntry("cocktails", cocktail.slug);
 const { Content } = await entry!.render();
 ---
 
-<a href=`/cocktails/${cocktail.slug}` class="flex max-w-sm flex-col overflow-hidden rounded-lg shadow-lg">
-  <div class="m-auto w-2/3 justify-center sm:w-full">
+<a href=`/cocktails/${cocktail.slug}` class="flex max-w-sm flex-col overflow-hidden rounded-lg border pb-4 shadow-lg">
+  <div class="m-auto w-full justify-center">
     <Picture src={cocktail.data.pic} formats={["avif", "webp"]} alt={cocktail.data.title} />
   </div>
 

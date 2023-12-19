@@ -4,7 +4,7 @@ import Socials from "./Socials.astro";
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="rounded-b-lg bg-gradient-to-r from-blue-600 to-blue-50 text-sm">
+<footer class="rounded-b-lg bg-gradient-to-r from-blue-700 to-blue-50 text-sm">
   <div class="grid grid-rows-1 items-center gap-4 p-4 sm:grid-cols-3 sm:content-end">
     <!-- Adresse -->
     <div class="flex flex-col items-center sm:order-1 sm:items-start sm:text-blue-200">
@@ -16,7 +16,7 @@ const currentYear = new Date().getFullYear();
 
     <!-- Öffnungszeiten -->
     <div class="flex flex-col items-center text-blue-800 sm:order-3 sm:items-end">
-      <p>Öffnungszeiten:</p>
+      <p>Öffnungszeiten des Restaurants:</p>
       <p>Dienstag - Freitag und Sonntag:</p><p>12:00 - 14:30 und 17:00 - 23:00</p>
       <p>Samstag: 17:00 - 23:00</p>
       <p>Montag: Ruhetag</p>
@@ -47,4 +47,3 @@ const currentYear = new Date().getFullYear();
     @apply text-sm;
   }
 </style>
-
