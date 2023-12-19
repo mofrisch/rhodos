@@ -13,7 +13,7 @@ const pictures = await getCollection("lounge");
 <Layout titleImage="none">
   <CarouselLayout mode="slide">
     <!-- Carousel wrapper -->
-    <div class="md:h-96 relative h-96 overflow-hidden rounded-b-lg">
+    <div class="md:h-96 relative z-0 h-96 overflow-hidden rounded-b-lg">
       {pictures.map(picture => <Carousel {picture} />)}
     </div>
 
