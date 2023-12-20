@@ -13,25 +13,22 @@ export interface Props {
   };
 }
 
-// const coll = "lunch";
-
 const { meal, coll } = Astro.props;
 const entry = await getEntry("lunch", meal.slug);
-if (!entry) throw new Error(`Could not find entry for ${meal.slug}`);
-const { Content } = await entry.render();
+const { Content } = await entry!.render();
 ---
 
-<li class="mb-5">
+<li class="mx-2 mb-5">
   <div class="flex w-full justify-items-start">
     <div class="px-2 text-lg">
       <span>{meal.slug.toUpperCase()}.</span>
     </div>
     <div class="flex w-full">
       <div class="flex-auto">
-        <div class="hover:text-skin-accent w-full flex-1 text-lg">
+        <div class="w-full flex-1 text-lg hover:italic">
           <a href={`/${coll}/${meal.slug}/`}> {meal.data.title}</a>
         </div>
-        <div>
+        <div class="font-serif text-sm">
           <Content />
         </div>
       </div>

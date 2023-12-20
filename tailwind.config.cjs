@@ -7,7 +7,12 @@ module.exports = {
       sm: "800px",
     },
     extend: {
-      fontFamily: { sans: ["Open Sans"], ...defaultTheme.fontFamily.sans },
+      fontFamily: {
+        sans: ["Open Sans"],
+        ...defaultTheme.fontFamily.sans,
+        serif: ["Domine"],
+        ...defaultTheme.fontFamily.serif,
+      },
     },
   },
   plugins: [require("@tailwindcss/typography"), require("flowbite/plugin")],
