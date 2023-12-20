@@ -13,7 +13,7 @@ const pictures = await getCollection("lounge");
 <Layout titleImage="none">
   <CarouselLayout mode="slide">
     <!-- Carousel wrapper -->
-    <div class="relative z-0 h-96 w-full overflow-hidden rounded-b-lg">
+    <div class="relative z-0 h-48 w-full overflow-hidden rounded-b-lg sm:h-[36rem]">
       {pictures.map(picture => <Carousel {picture} />)}
     </div>
 
@@ -25,7 +25,7 @@ const pictures = await getCollection("lounge");
 
   <section id="willkommen" class="mb-8">
     <div class="my-8 flex items-center justify-center">
-      <h1 class="text-5xl font-bold">Rhodos Lounge</h1>
+      <h1>Rhodos Lounge</h1>
     </div>
     <p class="pb-4 text-lg">
       Die Kellerbar im Restaurant Rhodos, liebevoll geführt von Andreas, dem Sohn von Giulia und Taki, bietet ein
