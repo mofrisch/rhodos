@@ -139,7 +139,7 @@
   }
 
   body {
-    @apply m-auto w-full  max-w-6xl bg-blue-50 text-blue-800;
+    @apply m-auto w-full  max-w-7xl bg-blue-50 text-blue-800;
   }
 
   section {
