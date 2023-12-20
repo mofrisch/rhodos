@@ -19,22 +19,24 @@ const { Content } = await entry!.render();
 ---
 
 <li class="mx-2 mb-5">
-  <div class="flex w-full justify-items-start">
-    <div class="px-2 text-lg">
-      <span>{meal.slug.toUpperCase()}.</span>
-    </div>
-    <div class="flex w-full">
-      <div class="flex-auto">
-        <div class="w-full flex-1 text-lg hover:italic">
-          <a href={`/${coll}/${meal.slug}/`}> {meal.data.title}</a>
+  <a href={`/${coll}/${meal.slug}/`}>
+    <div class="flex w-full justify-items-start">
+      <div class="px-2 text-lg">
+        <span>{meal.slug.toUpperCase()}.</span>
+      </div>
+      <div class="flex w-full">
+        <div class="flex-auto">
+          <div class="w-full flex-1 text-lg">
+            {meal.data.title}
+          </div>
+          <div class="text-sm">
+            <Content />
+          </div>
         </div>
-        <div class="font-serif text-sm">
-          <Content />
+        <div>
+          <span class="text-lg">{euro.format(meal.data.price)}</span>
         </div>
       </div>
-      <div>
-        <span class="text-lg">{euro.format(meal.data.price)}</span>
-      </div>
     </div>
-  </div>
+  </a>
 </li>

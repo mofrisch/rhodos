@@ -192,6 +192,6 @@
     @apply mb-2;
   }
   a {
-    @apply hover:italic;
+    @apply hover:underline;
   }
 }
