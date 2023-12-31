@@ -1,0 +1,23 @@
+---
+import { Picture } from "astro:assets";
+import ImageMetadata from "astro";
+
+export interface Props {
+  picture: {
+    data: {
+      title: string;
+      pic: ImageMetadata;
+      active?: boolean;
+    };
+    slug: string;
+  };
+}
+
+const { picture } = Astro.props;
+---
+
+<div class="absolute duration-1000 ease-in-out" data-carousel-item>
+  <div class="active absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+    <Picture src={picture.data.pic} formats={["avif", "webp"]} alt={picture.data.title} />
+  </div>
+</div>

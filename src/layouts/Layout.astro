@@ -14,7 +14,7 @@ const { title = SITE.title, titleImage } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="de-DE" id="root" class="no-js">
+<html lang="de-DE">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,9 +45,6 @@ const { title = SITE.title, titleImage } = Astro.props;
         <Footer />
       </div>
     </div>
-    <script>
-      document.documentElement.classList.remove("no-js");
-      document.documentElement.classList.add("js");
-    </script>
+    <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
   </body>
 </html>

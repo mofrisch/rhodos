@@ -20,36 +20,17 @@ const entry = await getEntry("cocktails", cocktail.slug);
 const { Content } = await entry!.render();
 ---
 
-<!--
-  <li class="mb-5">
-  <div class="flex w-full justify-items-start">
-    <div class="px-2 text-lg">
-      <span>{cocktail.slug.toUpperCase()}.</span>
-    </div>
-    <div class="flex w-full">
-      <div class="flex-auto">
-        <div class="hover:text-skin-accent w-full flex-1 text-lg">
-          <a href={`/cocktails/${cocktail.slug}/`}> {cocktail.data.title}</a>
-        </div>
-        <div>
-          <Content />
-        </div>
-      </div>
-      <div>
-        <span class="text-lg">{euro.format(cocktail.data.price)}</span>
-      </div>
-    </div>
-  </div>
-</li>
--->
-<a href=`/cocktails/${cocktail.slug}` class="flex max-w-sm flex-col overflow-hidden rounded shadow-lg">
-  <div class="w-full hidden sm:flex">
+<a
+  href=`/cocktails/${cocktail.slug}`
+  class="flex max-w-sm flex-col overflow-hidden rounded-lg border pb-4 shadow-lg hover:scale-105"
+>
+  <div class="m-auto w-full justify-center">
     <Picture src={cocktail.data.pic} formats={["avif", "webp"]} alt={cocktail.data.title} />
   </div>
 
   <div class="flex-1 px-6 py-4">
     <div class="mb-2 text-xl font-bold">{cocktail.data.title}</div>
-    <p class="text-base text-gray-700">
+    <p class="text-base">
       <Content />
     </p>
   </div>

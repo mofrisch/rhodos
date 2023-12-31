@@ -10,17 +10,6 @@ const lunch = defineCollection({
 
 const meals = lunch;
 
-/*
-const cocktails = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    price: z.number(),
-    img: z.string(),
-  }),
-});
-*/
-
 const cocktails = defineCollection({
   schema: ({ image }) =>
     z.object({
@@ -32,8 +21,21 @@ const cocktails = defineCollection({
     }),
 });
 
+const lounge = defineCollection({
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      pic: image(),
+      active: z.boolean().optional(),
+    }),
+});
+
+const home = lounge;
+
 export const collections = {
   lunch,
   meals,
   cocktails,
+  lounge,
+  home,
 };

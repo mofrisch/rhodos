@@ -1,0 +1,21 @@
+---
+export interface Props {
+  /**
+   * The number of slides in the carousel.
+   */
+  num: number;
+}
+const { num } = Astro.props;
+let newArray = Array.from({ length: num }, (value, index) => index);
+---
+
+<!-- Sliders -->{
+  newArray.map(index => (
+    <button
+      type="button"
+      class="h-2 w-2 rounded-full"
+      aria-label={`Slide ${index + 1}`}
+      data-carousel-slide-to={index}
+    />
+  ))
+}

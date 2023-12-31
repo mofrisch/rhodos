@@ -13,9 +13,9 @@ const { href, ariaLabel, title, disabled = false } = Astro.props;
 <a
   href={disabled ? "#" : href}
   tabindex={disabled ? "-1" : "0"}
-  class="mx-2 mt-2 inline-block h-6 w-6 scale-125
+  class="mx-2 mt-2 inline-block h-6 w-6
     fill-transparent stroke-current stroke-2 opacity-90
-    hover:text-blue-200 sm:scale-110"
+    hover:scale-150 hover:text-blue-200"
   aria-label={ariaLabel}
   title={title}
   aria-disabled={disabled}
