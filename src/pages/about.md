@@ -7,12 +7,12 @@ current: "/about"
 ### Giulia und Taki
 
 Willkommen im Restaurant Rhodos in Weiterstadt, geführt von den engagierten
-Gastgebern Giulia und Taki! Ihr gemeinsames Ziel ist es, die authentische
+Gastgebern Julia und Christos! Ihr gemeinsames Ziel ist es, die authentische
 griechische Küche mit einem Hauch moderner Kreativität zu präsentieren.
 
-Giulia stammt aus der malerischen Region nahe Alexandroupolis in Griechenland.
+Julia stammt aus der malerischen Region nahe Alexandroupolis in Griechenland.
 Ihre kulinarischen Fähigkeiten und ihr Sinn für traditionelle griechische Rezepte
-bilden das Herz des Restaurants. Taki, ebenfalls mit griechischen Wurzeln,
+bilden das Herz des Restaurants. Christos, ebenfalls mit griechischen Wurzeln,
 teilt ihre Leidenschaft für die Küche und zusammen schaffen sie ein unvergessliches
 Gastronomieerlebnis.
 
@@ -22,8 +22,8 @@ Atmosphäre, in der sich jeder Gast wie zu Hause fühlt.
 
 ## Unsere Geschichte
 
-Das Restaurant Rhodos wurde im Jahr [Einfügung des Eröffnungsjahres] von Giulia
-und Taki eröffnet. Ihre Vision war es, einen Ort zu schaffen, an dem die Gäste
+Das Restaurant Rhodos wurde im Jahr 2007 von Julia
+und Christos übernommen. Ihre Vision war es, einen Ort zu schaffen, an dem die Gäste
 die echte griechische Gastfreundschaft und Küche erleben können. Jedes Detail
 im Restaurant wurde sorgfältig ausgewählt, um eine warme und einladende Umgebung
 zu schaffen.

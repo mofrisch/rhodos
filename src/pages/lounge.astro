@@ -22,7 +22,7 @@ const pictures = await getCollection("lounge");
 
   <CarouselLayout mode="slide">
     <!-- Carousel wrapper -->
-    <div class="relative z-0 mb-8 h-64 w-full overflow-hidden rounded-lg sm:h-[853px]">
+    <div class="relative z-0 mb-8 h-64 w-full overflow-hidden rounded-lg sm:h-96">
       {pictures.map(picture => <Carousel {picture} />)}
     </div>
     <!-- Slider indicators -->
