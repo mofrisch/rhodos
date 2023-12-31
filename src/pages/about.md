@@ -4,7 +4,7 @@ title: "Über uns..."
 current: "/about"
 ---
 
-### Giulia und Taki
+### Julia und Christos
 
 Willkommen im Restaurant Rhodos in Weiterstadt, geführt von den engagierten
 Gastgebern Julia und Christos! Ihr gemeinsames Ziel ist es, die authentische
@@ -20,7 +20,7 @@ In ihrem Restaurant vereinen sie die Liebe zur griechischen Kultur und Küche.
 Sie legen großen Wert auf authentische Rezepte, frische Zutaten und eine familiäre
 Atmosphäre, in der sich jeder Gast wie zu Hause fühlt.
 
-## Unsere Geschichte
+### Unsere Geschichte
 
 Das Restaurant Rhodos wurde im Jahr 2007 von Julia
 und Christos übernommen. Ihre Vision war es, einen Ort zu schaffen, an dem die Gäste
