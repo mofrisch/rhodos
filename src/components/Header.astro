@@ -86,7 +86,13 @@ const image = titleImage ? loungeImage : myImage;
     ""
   ) : (
     <div class="mx-auto flex w-full items-center justify-center">
-      <Picture src={image} formats={["avif", "webp"]} alt="Willkommen im Restaurant Rhodos" loading={"eager"} />
+      <Picture
+        src={image}
+        formats={["avif", "webp"]}
+        alt="Willkommen im Restaurant Rhodos"
+        widths={[240, 500, 800, 1280]}
+        loading={"eager"}
+      />
     </div>
   )
 }
