@@ -14,7 +14,7 @@ const { title = SITE.title, titleImage } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="de-DE">
+<html lang="de-DE" class="h-full overflow-x-clip overscroll-x-none">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,17 +31,19 @@ const { title = SITE.title, titleImage } = Astro.props;
     <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
 
-  <body class="min-h-screen overflow-x-hidden bg-white">
-    <div class="flex min-h-screen flex-col justify-between">
-      <Header {titleImage} />
+  
+    <body class="min-h-screen touch-pan-y overflow-x-clip bg-white">
+      <div class="flex min-h-screen max-w-[100vw] flex-col justify-between overflow-x-clip">
+        <Header {titleImage} />
 
-      <main class="relative flex-grow px-4">
-        <slot />
-      </main>
+        <main class="relative max-w-[100vw] flex-grow overflow-x-clip break-words px-4">
+          <slot />
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
 
-    <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
-  </body>
-</html>
+      <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+    </body>
+  </html>
+
